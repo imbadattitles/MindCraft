@@ -1,0 +1,86 @@
+.title
+    padding-top: 150px
+    margin-bottom: 20px
+    pointer-events: none !important
+    position: relative
+    @media screen and (max-width: 960px)
+        padding-top: 150px
+        margin-bottom: 10px
+
+.choose
+    display: flex
+    gap: 13px
+    flex-wrap: wrap
+    margin-bottom: 60px
+    @media screen and (max-width: 960px)
+        margin-bottom: 50px
+
+
+.chooseBtn
+    padding: 4px 6px 4px 4px
+    border: 1px dashed white
+    display: flex
+    align-items: center
+    align-content: flex-start
+    cursor: pointer
+    p
+        position: relative
+        top: 3px
+
+.active
+    border: 1px dashed white
+    p
+        color: #8DE936
+    .chooseBtnIcon
+        background-image: url('/posts/emeraldActive.png')
+.active.chooseBtn
+    border: 1px dashed #8DE936
+.chooseBtnIcon
+    margin-right: 7px
+    width: 27px
+    height: 27px
+    background-image: url('/posts/emerald.png')
+    background-repeat: no-repeat
+    @media screen and (max-width: 960px)
+        background-size: contain
+        width: 24px
+        height: 24px
+
+.posts
+    display: flex
+    flex-wrap: wrap
+    gap: 59px
+    margin-bottom: 270PX
+    @media screen and (max-width: 960px)
+        gap: 24px
+        margin-bottom: 70px
+
+    
+.postImg
+    margin-bottom: 12px
+    @media screen and (max-width: 560px)
+        width: 85vw
+        margin-bottom: 6px
+
+.date
+    margin-bottom: 8px
+    @media screen and (max-width: 560px)
+        margin-bottom: 4px
+
+.postTitle
+    max-width: 380px
+    margin-bottom: 8px
+    @media screen and (max-width: 560px)
+        max-width: 80vw
+
+.postText
+    max-width: 380px
+    line-height: 150%
+    margin-bottom: 13px
+    @media screen and (max-width: 560px)
+        max-width: 80vw
+
+.section
+    background-image: url('/posts/bg.png')
+    @media screen and (max-width: 960px)
+        background-image: none
