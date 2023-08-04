@@ -15,7 +15,7 @@ export default function Home() {
           </h4>
           <div className={s.btnRow}>
             <span className={s.blurUnderBtn} />
-            <button className="btn232 f12_Unbounded font-black bg-greenMain">
+            <button className="btn232 f12_Unbounded shadow-green_main font-black bg-greenMain">
               ПОПРОБОВАТЬ
             </button>
           </div>
