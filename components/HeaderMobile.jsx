@@ -3,11 +3,13 @@ import Image from "next/image";
 import logo from "../public/logoMobile.svg";
 import s from "../styles/header.module.sass";
 import { useState } from "react";
+import { Login } from "./Login";
 
 const { default: Link } = require("next/link");
 
 const HeaderMobile = () => {
   const [visible, setVisible] = useState(false);
+  const [visibleLogin, setVisibleLogin] = useState(0);
   return (
     <div className={`container ${s.headerMobile}`}>
       <Link href="/">
@@ -62,8 +64,14 @@ const HeaderMobile = () => {
               </span>
               <div className="btn-icon"></div>
             </button>
-            <button className="btn-header f12_Unbounded">Войти</button>
+            <button
+              onClick={() => setVisibleLogin(1)}
+              className="btn-header f12_Unbounded"
+            >
+              Войти
+            </button>
           </div>
+          {visibleLogin == 1 && <Login close={setVisibleLogin} />}
         </div>
       )}
     </div>

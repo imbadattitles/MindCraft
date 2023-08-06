@@ -1,3 +1,4 @@
+"use client";
 import s from "../styles/mainPage.module.sass";
 
 const MySelect = ({

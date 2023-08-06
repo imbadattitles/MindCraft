@@ -1,11 +1,25 @@
+"use client";
+
 import { SignUpCurse } from "@/components/SignUpCurse";
 import s from "../styles/mainPage.module.sass";
 import { FAQ } from "@/components/FAQ";
+import { useState } from "react";
 
 export default function Home() {
   return (
     <div>
       <section className={s.main}>
+        <div className={s.mainVideoWrapper}>
+          <div className={s.videoItem}></div>
+          <iframe
+            className={s.videoElement}
+            src="https://www.youtube.com/embed/6eeXsCFTlrw?autoplay=1&?loop=1&?&mute=1"
+            title="YouTube video player"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen
+          ></iframe>
+        </div>
         <div className="container">
           <div className={s.offerIcons} />
           <h1 className={`f96 ${s.h1pos}`}>ОБУЧЕНИЕ ЧЕРЕЗ ИГРУ</h1>
@@ -132,7 +146,9 @@ export default function Home() {
                   <button className={`btn180 f11 font-black bg-green`}>
                     ЗАПИСАТЬСЯ
                   </button>
-                  <button className={`arrowBtn-big bg-green`}></button>
+                  <button className={`arrowBtn-big bg-green`}>
+                    <span className="arrowSml" />
+                  </button>
                 </div>
                 <div className={s.slideItemBg} />
               </div>
@@ -166,7 +182,9 @@ export default function Home() {
                   <button className={`btn180 f11 font-black bg-green`}>
                     ЗАПИСАТЬСЯ
                   </button>
-                  <button className={`arrowBtn-big bg-green`}></button>
+                  <button className={`arrowBtn-big bg-green`}>
+                    <span className="arrowSml" />
+                  </button>
                 </div>
                 <div className={s.slideItemBg} />
               </div>
@@ -200,7 +218,9 @@ export default function Home() {
                   <button className={`btn180 f11 font-black bg-green`}>
                     ЗАПИСАТЬСЯ
                   </button>
-                  <button className={`arrowBtn-big bg-green`}></button>
+                  <button className={`arrowBtn-big bg-green`}>
+                    <span className="arrowSml" />
+                  </button>
                 </div>
                 <div className={s.slideItemBg} />
               </div>

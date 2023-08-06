@@ -4,6 +4,8 @@
     align-items: center
     transform: translateY(55px)
     height: 0px
+    position: relative
+    z-index: 4
     @media screen and (max-width: 960px)
         display: none
     ul
@@ -58,24 +60,25 @@
         list-style: none
         text-align: center
         margin-bottom: 6vh
-    span 
-        position: absolute
-        left: -7px
-        top: -4px
-        text-align: center
-        font-family: Unbounded
-        font-size: 10px
-        font-style: normal
-        font-weight: 500
-        line-height: normal
-        letter-spacing: 130%
-        width: 23px
-        height: 23px
-        border-radius: 100%
-        display: flex
-        align-content: center
-        align-items: center
-        justify-content: center
+    .headerBtns
+        span 
+            position: absolute
+            left: -7px
+            top: -4px
+            text-align: center
+            font-family: Unbounded
+            font-size: 10px
+            font-style: normal
+            font-weight: 500
+            line-height: normal
+            letter-spacing: 130%
+            width: 23px
+            height: 23px
+            border-radius: 100%
+            display: flex
+            align-content: center
+            align-items: center
+            justify-content: center
         
 
 .logoMobile
@@ -125,3 +128,95 @@
     border: none
     background-size: contain
 
+
+.loginModalBg
+    z-index: 10
+    display: flex
+    flex-direction: column
+    align-items: center
+    justify-content: center
+    position: fixed
+    left: 0
+    right: 0
+    bottom: 0
+    top: 0
+    background: rgba(0, 0, 0, 0.60)
+    @media screen and (max-width: 660px)
+        padding: 0 10px
+
+.loginModalBlock
+    position: relative
+    border: 3px solid #5FC300
+    background: #010103
+    padding: 60px 110px 70px 115px
+    @media screen and (max-width: 660px)
+        padding: 20px 20px 50px 20px
+        button
+            @media screen and (max-width: 660px)
+                width: 100%
+
+.loginModalTitle
+    margin-bottom: 25px
+    @media screen and (max-width: 660px)
+        margin-bottom: 15px
+
+.loginRow
+    display: flex
+    justify-content: space-between
+    align-items: flex-end
+    @media screen and (max-width: 660px)
+        margin-top: 20px
+
+.theOnlyThingIknowForReal
+    text-decoration-line: underline
+    align-self: flex-start
+    transform: translateY(5px)
+    font-size: 20px
+    @media screen and (max-width: 660px)
+        font-size: 11px
+    &:hover
+        color: #5FC300
+
+.loginClose
+    width: 30px
+    height: 30px
+    background-position: center
+    background-repeat: no-repeat
+    background-image: url('/loginClose.svg')
+    position: absolute
+    top: 25px
+    right: 30px
+    cursor: pointer
+    &:hover
+        filter: invert(96%) sepia(67%) saturate(12%) hue-rotate(245deg) brightness(304%) contrast(100%)
+    @media screen and (max-width: 660px)
+        right: 5px
+        top: 5px
+
+.loginPic
+    position: absolute
+    top: -90px
+    left: -70px
+    width: 970px
+    height: 100px
+    background-repeat: no-repeat
+    background-image: url('/loginPic.png')
+    @media screen and (max-width: 660px)
+        height: 65px
+        background-size: contain
+        top: -60px
+
+.loginCube
+    position: absolute
+    width: 98px
+    height: 120px
+    background-image: url('/loginCube.png')
+    bottom: -60px
+    right: 60px
+    @media screen and (max-width: 660px)
+        background-size: contain
+        width: 54px
+        background-repeat: no-repeat
+        bottom: -80px
+        right: 20px
+    
