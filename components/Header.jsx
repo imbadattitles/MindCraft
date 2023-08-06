@@ -18,13 +18,13 @@ const Header = () => {
         </Link>
         <ul className="f12_5">
           <li>
-            <Link href="/">Программы</Link>
+            <Link href="#ourProgram">Программы</Link>
           </li>
           <li>
-            <Link href="/blog">Платформа</Link>
+            <Link href="#preparing">Платформа</Link>
           </li>
-          <li className="h1">
-            <Link href="/about">Преподаватели</Link>
+          <li>
+            <Link href="#ourMentors">Преподаватели</Link>
           </li>
           <li>
             <Link href="/about">О minecraft</Link>
@@ -37,10 +37,12 @@ const Header = () => {
           </li>
         </ul>
         <div className={s.headerBtns}>
-          <button className="btn-cart">
-            <span className="font-black bg-green">12</span>
-            <div className="btn-icon"></div>
-          </button>
+          <Link href="/cart">
+            <button className="btn-cart">
+              <span className="font-black bg-green">12</span>
+              <div className="btn-icon"></div>
+            </button>
+          </Link>
           <button
             onClick={() => setVisible(1)}
             className="btn-header f12_Unbounded"

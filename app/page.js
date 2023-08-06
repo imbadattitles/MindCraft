@@ -103,7 +103,7 @@ export default function Home() {
           <div className={s.howLearnCube2} />
         </div>
       </section>
-      <section className={s.ourProgram}>
+      <section id="ourProgram" className={s.ourProgram}>
         <span className={s.learnBg1} />
         <span className={s.learnBg2} />
         <span className={s.learnBg3} />
@@ -521,7 +521,7 @@ export default function Home() {
           </div>
         </div>
       </section>
-      <section className={s.preparing}>
+      <section id="preparing" className={s.preparing}>
         <span className={s.preparingBg} />
         <div className="container">
           <h3 className={`f40 ${s.preparingTitle}`}>
@@ -616,7 +616,7 @@ export default function Home() {
           </div>
         </div>
       </section>
-      <section className="ourMentors">
+      <section id="ourMentors" className="ourMentors">
         <div className="container">
           <h4 className="f40 ourMentors_title">
             НАШИ <br />
