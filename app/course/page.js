@@ -14,6 +14,7 @@ export default function course() {
   return (
     <div>
       <section className={s.main}>
+        <span className={s.mainBg} />
         <div className="container">
           <h1 className={`f64 ${s.h1pos}`}>{main.title}</h1>
           <h4 className={`f20 titleTextPos`}>{main.text}</h4>
