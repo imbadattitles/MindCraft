@@ -28,6 +28,7 @@ export default function Post() {
   ];
   return (
     <section className={s.section}>
+      <span className={s.preparingBg} />
       <div className={s.postTitleBig}>
         <h1>SPARK МОНЕТЫ В MINDCRAFT АКАДЕМИИ</h1>
         <img src="/post/picTitle.png" className={s.postTitleImg} />
@@ -161,7 +162,9 @@ export default function Post() {
             </tbody>
           </table>
         </div>
-        <Comments />
+      </div>
+      <Comments />
+      <div className="container">
         <h3 className={`f40 font-green ${s.postsTitle}`}>
           ДРУГИЕ НОВОСТИ АКАДЕМИИ
         </h3>

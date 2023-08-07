@@ -20,7 +20,8 @@
     position: absolute
     top: -60px
     width: 1440px
-    margin: 0 auto
+    left: 50%
+    transform: translate(-50%)
     overflow: hidden
     @media screen and (max-width: 1440px)
         width: 100vw
@@ -476,7 +477,8 @@
         margin-bottom: 100px
 
 .mainFormBg
-    width: 1442px
+    width: 100%
+    background-size: 100% auto
     height: 268px
     background-repeat: no-repeat
     position: absolute
@@ -484,6 +486,7 @@
     bottom: -300px
     background-image: url('/mainPage/mainFormBg.png')
     transform: rotate(0deg)
+    background-position: center
     @media screen and (max-width: 560px)
         display: none
 

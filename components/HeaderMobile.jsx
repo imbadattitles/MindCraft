@@ -4,12 +4,14 @@ import logo from "../public/logoMobile.svg";
 import s from "../styles/header.module.sass";
 import { useState } from "react";
 import { Login } from "./Login";
+import { useSelector } from "react-redux";
 
 const { default: Link } = require("next/link");
 
 const HeaderMobile = () => {
   const [visible, setVisible] = useState(false);
   const [visibleLogin, setVisibleLogin] = useState(0);
+  const amountInCart = useSelector((state) => state.cart.amount);
   return (
     <div className={`container ${s.headerMobile}`}>
       <Link href="/">
@@ -56,12 +58,14 @@ const HeaderMobile = () => {
           </ul>
           <div className={s.headerBtns}>
             <button className="btn-cart">
-              <span
-                style={{ border: "2px solid #8de936" }}
-                className="font-green bg-black"
-              >
-                12
-              </span>
+              {amountInCart > 0 && (
+                <span
+                  style={{ border: "2px solid black" }}
+                  className="font-black bg-green"
+                >
+                  {amountInCart}
+                </span>
+              )}
               <div className="btn-icon"></div>
             </button>
             <button

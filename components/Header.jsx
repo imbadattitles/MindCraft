@@ -41,7 +41,9 @@ const Header = () => {
         <div className={s.headerBtns}>
           <Link href="/cart">
             <button className="btn-cart">
-              <span className="font-black bg-green">{amountInCart}</span>
+              {amountInCart > 0 && (
+                <span className="font-black bg-green">{amountInCart}</span>
+              )}
               <div className="btn-icon"></div>
             </button>
           </Link>

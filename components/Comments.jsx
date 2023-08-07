@@ -32,88 +32,90 @@ const Comments = () => {
   const [myEmail, setMyEmail] = useState("");
   return (
     <section style={{ position: "relative" }}>
-      <p className={`f28 font-green`}>КОММЕНТАРИИ ({comments.length}):</p>
-      <div className={s.commentsGrid}>
-        {comments.length ? (
-          <>
-            {comments.map((item) => (
-              <>
-                <div key={item.name} className={s.commentInfo}>
-                  <div className={s.picContainer}>
-                    <span className={s.formCube1} />
-                    <img src={item.img} className={s.commentPic} />
-                  </div>
-                  <div>
-                    <p className={s.commentName}>{item.name}</p>
-                    <p className={s.commentDate}>{item.date}</p>
-                  </div>
-                </div>
-                <div className={s.commentText}>
-                  <span className={s.polygon} />
-                  {item.comment}
-                </div>
-                {item.answer && (
-                  <>
-                    <div
-                      key={item.answer.name}
-                      className={`${s.commentInfo} ${s.commentInfoAnswer}`}
-                    >
-                      <div className={s.picContainer}>
-                        <span className={s.formCube2} />
-                        <span className={s.answerArrow} />
-                        <img src={item.answer.img} className={s.commentPic} />
-                      </div>
-                      <div>
-                        <p className={s.commentName}>{item.answer.name}</p>
-                        <p className={s.commentDate}>{item.answer.date}</p>
-                      </div>
+      <div className="container">
+        <p className={`f28 font-green`}>КОММЕНТАРИИ ({comments.length}):</p>
+        <div className={s.commentsGrid}>
+          {comments.length ? (
+            <>
+              {comments.map((item) => (
+                <>
+                  <div key={item.name} className={s.commentInfo}>
+                    <div className={s.picContainer}>
+                      <span className={s.formCube1} />
+                      <img src={item.img} className={s.commentPic} />
                     </div>
-                    <div className={`${s.commentText} ${s.commentAnswer}`}>
-                      <span className={s.polygon} />
-                      {item.answer.comment}
+                    <div>
+                      <p className={s.commentName}>{item.name}</p>
+                      <p className={s.commentDate}>{item.date}</p>
                     </div>
-                  </>
-                )}
-              </>
-            ))}
-          </>
-        ) : (
-          <p className={s.noComments}>Комментарий нет</p>
-        )}
-        <form className={s.commentForm}>
-          <textarea
-            className={`${s.formInput} ${s.textarea}`}
-            placeholder="Мой комментарий"
-            value={myComment}
-            onChange={(e) => setMyComment(e.target.value)}
-          />
-          <div className={s.inputRow}>
-            <div style={{ width: "100%" }}>
-              <p className="input60title">Имя*</p>
-              <input
-                type="text"
-                value={myName}
-                onChange={(e) => setMyName(e.target.value)}
-                className={s.input}
-              />
+                  </div>
+                  <div className={s.commentText}>
+                    <span className={s.polygon} />
+                    {item.comment}
+                  </div>
+                  {item.answer && (
+                    <>
+                      <div
+                        key={item.answer.name}
+                        className={`${s.commentInfo} ${s.commentInfoAnswer}`}
+                      >
+                        <div className={s.picContainer}>
+                          <span className={s.formCube2} />
+                          <span className={s.answerArrow} />
+                          <img src={item.answer.img} className={s.commentPic} />
+                        </div>
+                        <div>
+                          <p className={s.commentName}>{item.answer.name}</p>
+                          <p className={s.commentDate}>{item.answer.date}</p>
+                        </div>
+                      </div>
+                      <div className={`${s.commentText} ${s.commentAnswer}`}>
+                        <span className={s.polygon} />
+                        {item.answer.comment}
+                      </div>
+                    </>
+                  )}
+                </>
+              ))}
+            </>
+          ) : (
+            <p className={s.noComments}>Комментарий нет</p>
+          )}
+          <form className={s.commentForm}>
+            <textarea
+              className={`${s.formInput} ${s.textarea}`}
+              placeholder="Мой комментарий"
+              value={myComment}
+              onChange={(e) => setMyComment(e.target.value)}
+            />
+            <div className={s.inputRow}>
+              <div style={{ width: "100%" }}>
+                <p className="input60title">Имя*</p>
+                <input
+                  type="text"
+                  value={myName}
+                  onChange={(e) => setMyName(e.target.value)}
+                  className={s.input}
+                />
+              </div>
+              <div style={{ width: "100%" }}>
+                <p className="input60title">E-MAIL*</p>
+                <input
+                  type="email"
+                  value={myEmail}
+                  onChange={(e) => setMyEmail(e.target.value)}
+                  className={s.input}
+                />
+              </div>
             </div>
-            <div style={{ width: "100%" }}>
-              <p className="input60title">E-MAIL*</p>
-              <input
-                type="email"
-                value={myEmail}
-                onChange={(e) => setMyEmail(e.target.value)}
-                className={s.input}
-              />
-            </div>
-          </div>
-          <p className={s.formText}>
-            Ваш адрес email не будет опубликован. Обязательные поля помечены *
-          </p>
-          <button className="f12 font-black bg-green btn232">
-            ОПУБЛИКОВАТЬ
-          </button>
-        </form>
+            <p className={s.formText}>
+              Ваш адрес email не будет опубликован. Обязательные поля помечены *
+            </p>
+            <button className="f12 font-black bg-green btn232">
+              ОПУБЛИКОВАТЬ
+            </button>
+          </form>
+        </div>
       </div>
       <span className={s.formBg} />
     </section>
