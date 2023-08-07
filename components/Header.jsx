@@ -5,11 +5,13 @@ import s from "../styles/header.module.sass";
 import { HeaderMobile } from "./HeaderMobile";
 import { useState } from "react";
 import { Login } from "./Login";
+import { useSelector } from "react-redux";
 
 const { default: Link } = require("next/link");
 
 const Header = () => {
   const [visible, setVisible] = useState(0);
+  const amountInCart = useSelector((state) => state.cart.amount);
   return (
     <>
       <header className={`container ${s.header}`}>
@@ -39,7 +41,7 @@ const Header = () => {
         <div className={s.headerBtns}>
           <Link href="/cart">
             <button className="btn-cart">
-              <span className="font-black bg-green">12</span>
+              <span className="font-black bg-green">{amountInCart}</span>
               <div className="btn-icon"></div>
             </button>
           </Link>

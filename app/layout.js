@@ -4,6 +4,7 @@ import "./globals.sass";
 import { Unbounded } from "next/font/google";
 import { Header } from "@/components/Header";
 import { HeaderMobile } from "@/components/HeaderMobile";
+import { ReduxProvider } from "./redux/provider";
 
 const unbounded = Unbounded({ subsets: ["cyrillic"] });
 
@@ -16,10 +17,12 @@ export default function RootLayout({ children }) {
   return (
     <html lang="ru">
       <body className={unbounded.className}>
-        <Header />
-        <HeaderMobile />
-        <main>{children}</main>
-        <Footer />
+        <ReduxProvider>
+          <Header />
+          <HeaderMobile />
+          <main>{children}</main>
+          <Footer />
+        </ReduxProvider>
       </body>
     </html>
   );
