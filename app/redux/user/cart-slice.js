@@ -4,6 +4,29 @@ export const cartSlice = createSlice({
   name: "cart",
   initialState: {
     items: [],
+    coins: [
+      {
+        name: "10 монет IDEA",
+        img: "/cart/item2.png",
+        cost: 1950,
+        discount: 6400,
+        count: 1,
+      },
+      {
+        name: "20 монет IDEA",
+        img: "/cart/item2.png",
+        cost: 1950,
+        discount: 6400,
+        count: 1,
+      },
+      {
+        name: "30 монет IDEA",
+        img: "/cart/item2.png",
+        cost: 1950,
+        discount: 6400,
+        count: 1,
+      },
+    ],
     amount: 0,
   },
   reducers: {
@@ -15,17 +38,33 @@ export const cartSlice = createSlice({
     },
     deleteItems(state, action) {
       state.items = state.items.filter((item) => {
-        if (item.itemNumber !== action.payload.itemNumber) {
+        if (item.name !== action.payload.name) {
           return item;
         }
       });
     },
+    deleteCoins(state, action) {
+      state.coins = state.coins.filter((item) => {
+        if (item.name !== action.payload.name) {
+          return item;
+        }
+      });
+    },
+    setCoins(state, action) {
+      state.coins = action.payload;
+    },
     setAmount(state, action) {
-      state.amount = action.payload;
+      state.amount = state.items.length;
     },
   },
 });
 
 export default cartSlice.reducer;
-export const { pushItems, deleteItems, setItems, setAmount } =
-  cartSlice.actions;
+export const {
+  pushItems,
+  deleteItems,
+  setItems,
+  setAmount,
+  deleteCoins,
+  setCoins,
+} = cartSlice.actions;

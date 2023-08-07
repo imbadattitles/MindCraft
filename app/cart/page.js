@@ -3,28 +3,94 @@ import Link from "next/link";
 import s from "../../styles/cart.module.sass";
 import { useEffect, useState } from "react";
 import { Order } from "@/components/Order";
+import { useDispatch, useSelector } from "react-redux";
+import {
+  deleteCoins,
+  deleteItems,
+  setCoins,
+  setItems,
+} from "../redux/user/cart-slice";
 
 export default function UserPage() {
-  const [items, setItems] = useState([
-    {
-      name: "Курс «Основы информатики»",
-      img: "/cart/item1.png",
-      cost: 1950,
-      discount: false,
-      count: 1,
-    },
-    {
-      name: "10 монет IDEA",
-      img: "/cart/item2.png",
-      cost: 1950,
-      discount: 6400,
-      count: 1,
-    },
-  ]);
+  const items = useSelector((state) => state.cart.items);
+  const coins = useSelector((state) => state.cart.coins);
+  const dispatch = useDispatch();
+
+  const deleteItem = (item) => {
+    dispatch(deleteItems(item));
+  };
+  const deleteCoin = (item) => {
+    dispatch(deleteCoins(item));
+  };
+
+  const MinusCount = ({ item, items }) => {
+    if (item.count > 1) {
+      const newItems = items.map((goods) => {
+        if (goods.name === item.name) {
+          return {
+            ...item,
+            count: item.count - 1,
+          };
+        }
+        return goods;
+      });
+      dispatch(setItems(newItems));
+    }
+    if (item.count === 1) {
+      dispatch(deleteItems(item));
+    }
+  };
+
+  const PlusCount = ({ item, items }) => {
+    const newItems = items.map((goods) => {
+      if (goods.name === item.name) {
+        return { ...item, count: item.count + 1 };
+      }
+      return goods;
+    });
+    dispatch(setItems(newItems));
+  };
+
+  const MinusCoinCount = ({ coin, coins }) => {
+    if (coin.count > 1) {
+      const newItems = coins.map((goods) => {
+        if (goods.name === coin.name) {
+          return {
+            ...coin,
+            count: coin.count - 1,
+          };
+        }
+        return goods;
+      });
+      dispatch(setCoins(newItems));
+    }
+    if (coin.count === 1) {
+      dispatch(deleteCoins(coin));
+    }
+  };
+
+  const PlusCoinCount = ({ coin, coins }) => {
+    const newItems = coins.map((goods) => {
+      if (goods.name === coin.name) {
+        return { ...coin, count: coin.count + 1 };
+      }
+      return goods;
+    });
+    dispatch(setCoins(newItems));
+  };
+
+  const countCoinMath = (obj, method) => {
+    if (method == "plus") return PlusCoinCount(obj);
+    if (method == "minus") return MinusCoinCount(obj);
+  };
+
   const [sumCost, setSumCost] = useState(0);
   useEffect(() => {
     let cost = 0;
     items.map((item) => {
+      cost += item.cost * item.count;
+    });
+    coins.map((item) => {
       cost += item.cost * item.count;
     });
     setSumCost(cost);
@@ -59,20 +125,64 @@ export default function UserPage() {
                   </div>
                 )}
                 <div className={s.counterRow}>
-                  <span className={s.counterLeft} />
+                  <span
+                    onClick={() => countMath({ item, items }, "minus")}
+                    className={s.counterLeft}
+                  />
                   <div className={s.counter}>{item.count}</div>
-                  <span className={s.counterRight} />
+                  <span
+                    onClick={() => countMath({ item, items }, "plus")}
+                    className={s.counterRight}
+                  />
                 </div>
-                <p className={s.delete}>Удалить</p>
+                <p onClick={() => deleteItem(item)} className={s.delete}>
+                  Удалить
+                </p>
               </div>
             ))}
+            <>
+              {coins.map((coin) => (
+                <div className={s.itemRow} key={coin.name}>
+                  <div className={s.photoCircle}>
+                    <img className={s.itemPhoto} src={coin.img} />
+                  </div>
+                  <p className={`${s.itemName}`}>{coin.name}</p>
+                  {coin.discount ? (
+                    <div className={s.priceRow}>
+                      <span className={s.valutePic} />
+                      <p className={s.oldPrice}>{coin.cost} ₽</p>
+                      <p className={s.NewPrice}>{coin.discount} ₽</p>
+                    </div>
+                  ) : (
+                    <div className={s.priceRow}>
+                      <span className={s.valutePic} />
+                      <p className={s.price}>{coin.cost} ₽</p>
+                    </div>
+                  )}
+                  <div className={s.counterRow}>
+                    <span
+                      onClick={() => countCoinMath({ coin, coins }, "minus")}
+                      className={s.counterLeft}
+                    />
+                    <div className={s.counter}>{coin.count}</div>
+                    <span
+                      onClick={() => countCoinMath({ coin, coins }, "plus")}
+                      className={s.counterRight}
+                    />
+                  </div>
+                  <p onClick={() => deleteCoin(coin)} className={s.delete}>
+                    Удалить
+                  </p>
+                </div>
+              ))}
+            </>
           </div>
           <p className={s.resultSum}>
             Итого <span style={{ fontWeight: "500" }}>{sumCost} ₽</span>
           </p>
           <button
             onClick={() => {
-              if (items.length >= 1) setVisibleBlock(2);
+              if (items.length >= 1 || coins.length >= 1) setVisibleBlock(2);
             }}
             className={`bg-green font-black btn232 ${s.cartGoBtn}`}
           >
