@@ -10,12 +10,17 @@ import {
 import { useState } from "react";
 
 const CourseItems = ({ theme }) => {
-  const items = [{ name: "ОСНОВЫ ИНФОРМАТИКИ", cost: 1950 }];
+  const items = [
+    { name: "ОСНОВЫ ИНФОРМАТИКИ", cost: 1950 },
+    { name: "ПРОДВИНУТАЯ ИНФОРМАТИКА", cost: 1950 },
+    { name: "ПОДГОТОВКА К ЕГЭ", cost: 1950 },
+  ];
   const dispatch = useDispatch();
   const addCourse = (item) => {
     dispatch(pushItems({ ...item, count: 1 }));
     dispatch(setAmount());
-    setIncart(...incart, item.name);
+    setIncart([...incart, item.name]);
+    console.log(incart);
     dispatch(setTotalPrice());
   };
   const [incart, setIncart] = useState([]);
@@ -236,9 +241,21 @@ const CourseItems = ({ theme }) => {
             </div>
           </div>
           <div className={s.courseInfoBtns}>
-            <button className={`f12 bg-${theme} font-black ${s.courseInfoBtn}`}>
-              ЗАПИСАТЬСЯ
-            </button>
+            {incart.includes(items[1].name) ? (
+              <button
+                style={{ opacity: ".3" }}
+                className={`f12 bg-${theme} font-black ${s.courseInfoBtn}`}
+              >
+                ЗАПИСАТЬСЯ
+              </button>
+            ) : (
+              <button
+                onClick={() => addCourse(items[1])}
+                className={`f12 bg-${theme} font-black ${s.courseInfoBtn}`}
+              >
+                ЗАПИСАТЬСЯ
+              </button>
+            )}
             <button className={`f12 bg-${theme} font-black ${s.courseInfoBtn}`}>
               ХОЧУ ИНДИВИДУАЛЬНЫЙ УРОК
             </button>
@@ -342,9 +359,21 @@ const CourseItems = ({ theme }) => {
             </div>
           </div>
           <div className={s.courseInfoBtns}>
-            <button className={`f12 bg-${theme} font-black ${s.courseInfoBtn}`}>
-              ЗАПИСАТЬСЯ
-            </button>
+            {incart.includes(items[2].name) ? (
+              <button
+                style={{ opacity: ".3" }}
+                className={`f12 bg-${theme} font-black ${s.courseInfoBtn}`}
+              >
+                ЗАПИСАТЬСЯ
+              </button>
+            ) : (
+              <button
+                onClick={() => addCourse(items[2])}
+                className={`f12 bg-${theme} font-black ${s.courseInfoBtn}`}
+              >
+                ЗАПИСАТЬСЯ
+              </button>
+            )}
             <button className={`f12 bg-${theme} font-black ${s.courseInfoBtn}`}>
               ХОЧУ ИНДИВИДУАЛЬНЫЙ УРОК
             </button>

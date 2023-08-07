@@ -10,6 +10,7 @@ import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "swiper/css/scrollbar";
+import Link from "next/link";
 
 const mas = [1, 2, 3, 4, 5];
 const OurProgram = () => {
@@ -70,12 +71,16 @@ const OurProgram = () => {
                     </div>
                   </div>
                   <div className={s.slideItemBtns}>
-                    <button className={`btn180 f11 font-black bg-green`}>
-                      ЗАПИСАТЬСЯ
-                    </button>
-                    <button className={`arrowBtn-big bg-green`}>
-                      <span className="arrowBig" />
-                    </button>
+                    <Link href="/course">
+                      <button className={`btn180 f11 font-black bg-green`}>
+                        ЗАПИСАТЬСЯ
+                      </button>
+                    </Link>
+                    <Link href="/course">
+                      <button className={`arrowBtn-big bg-green`}>
+                        <span className="arrowBig" />
+                      </button>
+                    </Link>
                   </div>
                   <div className={s.slideItemBg} />
                 </div>
@@ -131,12 +136,16 @@ const OurProgram = () => {
                     </div>
                   </div>
                   <div className={s.slideItemBtns}>
-                    <button className={`btn180 f11 font-black bg-blue`}>
-                      ЗАПИСАТЬСЯ
-                    </button>
-                    <button className={`arrowBtn-big bg-blue`}>
-                      <span className="arrowBig" />
-                    </button>
+                    <Link href="/course">
+                      <button className={`btn180 f11 font-black bg-blue`}>
+                        ЗАПИСАТЬСЯ
+                      </button>
+                    </Link>
+                    <Link href="/course">
+                      <button className={`arrowBtn-big bg-blue`}>
+                        <span className="arrowBig" />
+                      </button>
+                    </Link>
                   </div>
                   <div className={s.slideItemBg} />
                 </div>
@@ -192,12 +201,16 @@ const OurProgram = () => {
                     </div>
                   </div>
                   <div className={s.slideItemBtns}>
-                    <button className={`btn180 f11 font-black bg-red`}>
-                      ЗАПИСАТЬСЯ
-                    </button>
-                    <button className={`arrowBtn-big bg-red`}>
-                      <span className="arrowBig" />
-                    </button>
+                    <Link href="/course">
+                      <button className={`btn180 f11 font-black bg-red`}>
+                        ЗАПИСАТЬСЯ
+                      </button>
+                    </Link>
+                    <Link href="/course">
+                      <button className={`arrowBtn-big bg-red`}>
+                        <span className="arrowBig" />
+                      </button>
+                    </Link>
                   </div>
                   <div className={s.slideItemBg} />
                 </div>
@@ -253,12 +266,16 @@ const OurProgram = () => {
                     </div>
                   </div>
                   <div className={s.slideItemBtns}>
-                    <button className={`btn180 f11 font-black bg-purple`}>
-                      ЗАПИСАТЬСЯ
-                    </button>
-                    <button className={`arrowBtn-big bg-purple`}>
-                      <span className="arrowBig" />
-                    </button>
+                    <Link href="/course">
+                      <button className={`btn180 f11 font-black bg-purple`}>
+                        ЗАПИСАТЬСЯ
+                      </button>
+                    </Link>
+                    <Link href="/course">
+                      <button className={`arrowBtn-big bg-purple`}>
+                        <span className="arrowBig" />
+                      </button>
+                    </Link>
                   </div>
                   <div className={s.slideItemBg} />
                 </div>
