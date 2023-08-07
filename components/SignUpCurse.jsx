@@ -73,7 +73,7 @@ const SignUpCurse = () => {
         <div class={`fake checkBox_dblue`}></div>
         <p class={`checkbox_text`}>
           Соглашаюсь с{" "}
-          <Link style={{ textDecoration: "underline" }} href="/">
+          <Link style={{ textDecoration: "underline" }} href="/postStatic">
             положением о защите персональных данных
           </Link>
         </p>
