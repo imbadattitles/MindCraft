@@ -38,9 +38,10 @@ const OurProgram = () => {
                 slidesPerView: 3,
               },
             }}
+            className="sample-slider"
             modules={[Navigation, A11y]}
             spaceBetween={35}
-            navigation
+            navigation={{}}
           >
             {mas.map((item) => (
               <SwiperSlide key={item}>

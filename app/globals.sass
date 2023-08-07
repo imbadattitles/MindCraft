@@ -957,3 +957,37 @@ button
 
 .none
   display: none
+
+#ourProgram, #anotherCourses
+  [class^="swiper-button-"]::after
+    content: ''
+
+
+.swiper-button-next
+  width: 21px
+  height: 39px
+  background-image: url('/sliderNext.svg')
+  background-repeat: no-repeat
+  background-size: contain
+  transform: translateX(-10px)
+  @media screen and (max-width: 560px)
+    height: 34px !important
+  &:hover
+    transform: translateX(-10px) scale(1.2)
+  &:active
+    opacity: .7
+
+.swiper-button-prev
+  width: 21px
+  height: 39px
+  background-image: url('/sliderPrev.svg')
+  background-repeat: no-repeat
+  background-size: contain
+  transform: translateX(0px)
+  @media screen and (max-width: 560px)
+    height: 34px !important
+    transform: translate(-10px)
+  &:hover
+    transform: translateX(0px) scale(1.2)
+  &:active
+    opacity: .7

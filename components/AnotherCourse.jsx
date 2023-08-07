@@ -14,7 +14,7 @@ const theme = "blue";
 const AnotherCourse = () => {
   const arr = [1, 2, 3, 4, 5];
   return (
-    <section className={s.anotherCourses}>
+    <section id="anotherCourses" className={s.anotherCourses}>
       <h3 className={`f40 container font-${theme}`}>ДРУГИЕ КУРСЫ АКАДЕМИИ</h3>
       <div className={s.anotherCoursesRow}>
         <Swiper
