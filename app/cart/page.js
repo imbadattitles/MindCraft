@@ -9,18 +9,22 @@ import {
   deleteItems,
   setCoins,
   setItems,
+  setTotalPrice,
 } from "../redux/user/cart-slice";
 
 export default function UserPage() {
   const items = useSelector((state) => state.cart.items);
   const coins = useSelector((state) => state.cart.coins);
   const dispatch = useDispatch();
-
+  const amountInCart = useSelector((state) => state.cart.amount);
+  const totalPrice = useSelector((state) => state.cart.totalPrice);
   const deleteItem = (item) => {
     dispatch(deleteItems(item));
+    dispatch(setTotalPrice());
   };
   const deleteCoin = (item) => {
     dispatch(deleteCoins(item));
+    dispatch(setTotalPrice());
   };
 
   const MinusCount = ({ item, items }) => {
@@ -35,9 +39,11 @@ export default function UserPage() {
         return goods;
       });
       dispatch(setItems(newItems));
+      dispatch(setTotalPrice());
     }
     if (item.count === 1) {
       dispatch(deleteItems(item));
+      dispatch(setTotalPrice());
     }
   };
 
@@ -49,6 +55,7 @@ export default function UserPage() {
       return goods;
     });
     dispatch(setItems(newItems));
+    dispatch(setTotalPrice());
   };
 
   const MinusCoinCount = ({ coin, coins }) => {
@@ -64,9 +71,10 @@ export default function UserPage() {
       });
       dispatch(setCoins(newItems));
     }
-    if (coin.count === 1) {
+    if (coin.count <= 1) {
       dispatch(deleteCoins(coin));
     }
+    dispatch(setTotalPrice());
   };
 
   const PlusCoinCount = ({ coin, coins }) => {
@@ -77,24 +85,18 @@ export default function UserPage() {
       return goods;
     });
     dispatch(setCoins(newItems));
+    dispatch(setTotalPrice());
   };
-
+  const countMath = (obj, method) => {
+    if (method == "plus") return PlusCount(obj);
+    if (method == "minus") return MinusCount(obj);
+  };
   const countCoinMath = (obj, method) => {
     if (method == "plus") return PlusCoinCount(obj);
     if (method == "minus") return MinusCoinCount(obj);
   };
 
   const [sumCost, setSumCost] = useState(0);
-  useEffect(() => {
-    let cost = 0;
-    items.map((item) => {
-      cost += item.cost * item.count;
-    });
-    coins.map((item) => {
-      cost += item.cost * item.count;
-    });
-    setSumCost(cost);
-  }, []);
   const [visibleBlock, setVisibleBlock] = useState(1);
   return (
     <section style={{ minHeight: "50vh" }} className="container">
@@ -102,7 +104,7 @@ export default function UserPage() {
         <>
           <div className={s.titleRow}>
             <p className={`f40 font-green ${s.title}`}>
-              КОРЗИНА (2) <span className={s.cartPic} />
+              КОРЗИНА ({amountInCart}) <span className={s.cartPic} />
             </p>
           </div>
           <div className={s.cartRows}>
@@ -142,7 +144,11 @@ export default function UserPage() {
             ))}
             <>
               {coins.map((coin) => (
-                <div className={s.itemRow} key={coin.name}>
+                <div
+                  style={coin.count == 0 ? { opacity: ".5" } : {}}
+                  className={s.itemRow}
+                  key={coin.name}
+                >
                   <div className={s.photoCircle}>
                     <img className={s.itemPhoto} src={coin.img} />
                   </div>
@@ -178,7 +184,7 @@ export default function UserPage() {
             </>
           </div>
           <p className={s.resultSum}>
-            Итого <span style={{ fontWeight: "500" }}>{sumCost} ₽</span>
+            Итого <span style={{ fontWeight: "500" }}>{totalPrice} ₽</span>
           </p>
           <button
             onClick={() => {

@@ -4,25 +4,14 @@ import { useState } from "react";
 import s from "../styles/cart.module.sass";
 import { useEffect } from "react";
 import Link from "next/link";
+import { useDispatch, useSelector } from "react-redux";
 
 const Order = ({ setVisibleBlock }) => {
-  const [items, setItems] = useState([
-    {
-      name: "Курс «Основы информатики»",
-      img: "/cart/item1.png",
-      cost: 1950,
-      discount: false,
-      count: 1,
-    },
-    {
-      name: "10 монет IDEA",
-      img: "/cart/item2.png",
-      cost: 1950,
-      discount: 6400,
-      count: 1,
-    },
-  ]);
-  const [sumCost, setSumCost] = useState(0);
+  const items = useSelector((state) => state.cart.items);
+  const coins = useSelector((state) => state.cart.coins);
+  const dispatch = useDispatch();
+  const amountInCart = useSelector((state) => state.cart.amount);
+  const totalPrice = useSelector((state) => state.cart.totalPrice);
   const [name, setName] = useState("");
   const [phone, setPhone] = useState("");
   const [email, setEmail] = useState("");
@@ -31,13 +20,6 @@ const Order = ({ setVisibleBlock }) => {
   const [time, setTime] = useState("");
   const [password, setPassword] = useState("");
   const [repeatPassword, setRepeatPassword] = useState("");
-  useEffect(() => {
-    let cost = 0;
-    items.map((item) => {
-      cost += item.cost * item.count;
-    });
-    setSumCost(cost);
-  }, []);
   return (
     <>
       <div className={s.titleRow}>
@@ -64,8 +46,21 @@ const Order = ({ setVisibleBlock }) => {
               <span className={s.orderInfoCount}>{item.count} шт.</span>
             </div>
           ))}
+          {coins.map((item) => (
+            <div key={item.name} className={s.orderInfoRow}>
+              <div className={s.orderInfoPic}>
+                <img src={item.img} className={s.orderInfoImg} />
+              </div>
+              <p className={s.orderInfoName}>{item.name}</p>
+              <div className={s.orderInfoCost}>
+                <span className={s.orderInfoValute} />
+                <p className={s.orderInfoCost}>{item.cost} ₽</p>
+              </div>
+              <span className={s.orderInfoCount}>{item.count} шт.</span>
+            </div>
+          ))}
           <p className={s.orderInfoResult}>
-            Итого: <span style={{ fontWeight: "500" }}>{sumCost} ₽</span>
+            Итого: <span style={{ fontWeight: "500" }}>{totalPrice} ₽</span>
           </p>
           <div onClick={() => setVisibleBlock(1)} className={s.back}>
             <span className={s.backArrow} />

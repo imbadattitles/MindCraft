@@ -2,7 +2,11 @@
 
 import { useDispatch } from "react-redux";
 import s from "../styles/course.module.sass";
-import { pushItems, setAmount } from "@/app/redux/user/cart-slice";
+import {
+  pushItems,
+  setAmount,
+  setTotalPrice,
+} from "@/app/redux/user/cart-slice";
 import { useState } from "react";
 
 const CourseItems = ({ theme }) => {
@@ -12,6 +16,7 @@ const CourseItems = ({ theme }) => {
     dispatch(pushItems({ ...item, count: 1 }));
     dispatch(setAmount());
     setIncart(...incart, item.name);
+    dispatch(setTotalPrice());
   };
   const [incart, setIncart] = useState([]);
   return (
