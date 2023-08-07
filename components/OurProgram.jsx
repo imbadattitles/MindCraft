@@ -82,7 +82,7 @@ const OurProgram = () => {
                       </button>
                     </Link>
                   </div>
-                  <div className={s.slideItemBg} />
+                  <span className={`${s.program_shape} ${s.program_shape1}`} />
                 </div>
               </SwiperSlide>
             ))}
@@ -147,7 +147,7 @@ const OurProgram = () => {
                       </button>
                     </Link>
                   </div>
-                  <div className={s.slideItemBg} />
+                  <span className={`${s.program_shape} ${s.program_shape2}`} />
                 </div>
               </SwiperSlide>
             ))}
@@ -212,7 +212,7 @@ const OurProgram = () => {
                       </button>
                     </Link>
                   </div>
-                  <div className={s.slideItemBg} />
+                  <span className={`${s.program_shape} ${s.program_shape3}`} />
                 </div>
               </SwiperSlide>
             ))}
@@ -277,7 +277,7 @@ const OurProgram = () => {
                       </button>
                     </Link>
                   </div>
-                  <div className={s.slideItemBg} />
+                  <span className={`${s.program_shape} ${s.program_shape4}`} />
                 </div>
               </SwiperSlide>
             ))}

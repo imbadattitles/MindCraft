@@ -128,7 +128,7 @@ const CourseItems = ({ theme }) => {
                 style={{ opacity: ".3" }}
                 className={`f12 bg-${theme} font-black ${s.courseInfoBtn}`}
               >
-                ЗАПИСАТЬСЯ
+                В КОРЗИНЕ
               </button>
             ) : (
               <button
@@ -246,7 +246,7 @@ const CourseItems = ({ theme }) => {
                 style={{ opacity: ".3" }}
                 className={`f12 bg-${theme} font-black ${s.courseInfoBtn}`}
               >
-                ЗАПИСАТЬСЯ
+                В КОРЗИНЕ
               </button>
             ) : (
               <button
@@ -364,7 +364,7 @@ const CourseItems = ({ theme }) => {
                 style={{ opacity: ".3" }}
                 className={`f12 bg-${theme} font-black ${s.courseInfoBtn}`}
               >
-                ЗАПИСАТЬСЯ
+                В КОРЗИНЕ
               </button>
             ) : (
               <button
