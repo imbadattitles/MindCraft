@@ -3,6 +3,7 @@ import s from "../../styles/course.module.sass";
 import Link from "next/link";
 import { SignUpCurseInCurse } from "@/components/SignUpCurseInCurse";
 import { SelectRadio } from "@/components/SelectRadio";
+import { AnotherCourse } from "@/components/AnotherCourse";
 export default function course() {
   const repeat = [1, 2, 3];
   const theme = "blue";
@@ -483,44 +484,7 @@ export default function course() {
           <SignUpCurseInCurse />
         </div>
       </section>
-      <section className={s.anotherCourses}>
-        <h3 className={`f40 container font-${theme}`}>ДРУГИЕ КУРСЫ АКАДЕМИИ</h3>
-        <div className={s.anotherCoursesRow}>
-          <Link href="/">
-            <div className={s.anotherCourse}>
-              <div className={s.anotherCourseCircle}>
-                <img
-                  src="/courses/anotherCourses.png"
-                  className={s.anotherCourseImg}
-                />
-              </div>
-              <h4 className="f19">ПЕРЕГОВОРЫ</h4>
-            </div>
-          </Link>
-          <Link href="/">
-            <div className={s.anotherCourse}>
-              <div className={s.anotherCourseCircle}>
-                <img
-                  src="/courses/anotherCourses.png"
-                  className={s.anotherCourseImg}
-                />
-              </div>
-              <h4 className="f19">ПЕРЕГОВОРЫ</h4>
-            </div>
-          </Link>
-          <Link href="/">
-            <div className={s.anotherCourse}>
-              <div className={s.anotherCourseCircle}>
-                <img
-                  src="/courses/anotherCourses.png"
-                  className={s.anotherCourseImg}
-                />
-              </div>
-              <h4 className="f19">ПЕРЕГОВОРЫ</h4>
-            </div>
-          </Link>
-        </div>
-      </section>
+      <AnotherCourse />
     </div>
   );
 }
