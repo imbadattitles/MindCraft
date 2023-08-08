@@ -12,6 +12,7 @@ const SignUpCurse = () => {
   const [phone, setPhone] = useState("");
   let phonenumber = useRef("");
   const [course, setCourse] = useState("");
+  const [goodResult, setGoodResult] = useState(false);
   return (
     <form className={s.mainForm}>
       <h4 className={`f40 font-dblue ${s.mainForm_title}`}>
@@ -21,66 +22,78 @@ const SignUpCurse = () => {
       <span className={s.borderRight} />
       <span className={s.borderBottom} />
       <span className={s.borderLeft} />
-      <div className={s.SignUp_row}>
-        <div className={s.SignUp_block}>
-          <p className={`f19 ${s.SignUpInput_title}`}>Имя</p>
-          <input
-            className={`f24 ${s.SignUp_input}`}
-            value={name}
-            onChange={(e) => setName(e.target.value)}
-            type="text"
-          />
-        </div>
-        <div className={s.SignUp_block}>
-          <p className={`f19 ${s.SignUpInput_title}`}>E-mail</p>
-          <input
-            className={`f24 ${s.SignUp_input}`}
-            value={mail}
-            onChange={(e) => setMail(e.target.value)}
-            type="email"
-          />
-        </div>
-        <div className={s.SignUp_block}>
-          <p className={`f19 ${s.SignUpInput_title}`}>Телефон</p>
-          <ReactInputMask
-            mask="+7 (999)-999-9999"
-            value={phone}
-            onChange={(e) => setPhone(e.target.value)}
-          >
-            {() => (
+      {!goodResult ? (
+        <>
+          <div className={s.SignUp_row}>
+            <div className={s.SignUp_block}>
+              <p className={`f19 ${s.SignUpInput_title}`}>Имя</p>
               <input
                 className={`f24 ${s.SignUp_input}`}
-                type="tel"
-                value={phone}
+                value={name}
+                onChange={(e) => setName(e.target.value)}
+                type="text"
               />
-            )}
-          </ReactInputMask>
+            </div>
+            <div className={s.SignUp_block}>
+              <p className={`f19 ${s.SignUpInput_title}`}>E-mail</p>
+              <input
+                className={`f24 ${s.SignUp_input}`}
+                value={mail}
+                onChange={(e) => setMail(e.target.value)}
+                type="email"
+              />
+            </div>
+            <div className={s.SignUp_block}>
+              <p className={`f19 ${s.SignUpInput_title}`}>Телефон</p>
+              <ReactInputMask
+                mask="+7 (999)-999-9999"
+                value={phone}
+                onChange={(e) => setPhone(e.target.value)}
+              >
+                {() => (
+                  <input
+                    className={`f24 ${s.SignUp_input}`}
+                    type="tel"
+                    value={phone}
+                  />
+                )}
+              </ReactInputMask>
+            </div>
+            <div className={s.SignUp_block}>
+              <p className={`f19 ${s.SignUpInput_title}`}>Курс</p>
+              <MySelect
+                onChange={(selectedSort) => setCourse(selectedSort)}
+                defaultValue="Выберите курс"
+                options={[
+                  { value: "ask", name: "курс 1" },
+                  { value: "desc", name: "курс 2" },
+                ]}
+              />
+            </div>
+          </div>
+          <label class={`label`}>
+            <input type="checkbox" class={`form__checkbox`} />
+            <div class={`fake checkBox_dblue`}></div>
+            <p class={`checkbox_text`}>
+              Соглашаюсь с{" "}
+              <Link style={{ textDecoration: "underline" }} href="/postStatic">
+                положением о защите персональных данных
+              </Link>
+            </p>
+          </label>
+          <button
+            onClick={() => setGoodResult(true)}
+            className={`btn209 f12_Unbounded font-white bg-dblue`}
+          >
+            ЗАПИСАТЬСЯ
+          </button>
+        </>
+      ) : (
+        <div className={`${s.goodResult} f40`}>
+          <span className={s.goodResultPic} />
+          МЫ СВЯЖЕМСЯ С ВАМИ В БЛИЖАЙШЕЕ ВРЕМЯ!
         </div>
-        <div className={s.SignUp_block}>
-          <p className={`f19 ${s.SignUpInput_title}`}>Курс</p>
-          <MySelect
-            onChange={(selectedSort) => setCourse(selectedSort)}
-            defaultValue="Выберите курс"
-            options={[
-              { value: "ask", name: "курс 1" },
-              { value: "desc", name: "курс 2" },
-            ]}
-          />
-        </div>
-      </div>
-      <label class={`label`}>
-        <input type="checkbox" class={`form__checkbox`} />
-        <div class={`fake checkBox_dblue`}></div>
-        <p class={`checkbox_text`}>
-          Соглашаюсь с{" "}
-          <Link style={{ textDecoration: "underline" }} href="/postStatic">
-            положением о защите персональных данных
-          </Link>
-        </p>
-      </label>
-      <button className={`btn209 f12_Unbounded font-white bg-dblue`}>
-        ЗАПИСАТЬСЯ
-      </button>
+      )}
     </form>
   );
 };
