@@ -1,6 +1,12 @@
 import Link from "next/link";
 import s from "../../styles/posts.module.sass";
 
+export const metadata = {
+  title: "Новости MindCraft",
+  description:
+    "Используем платформу Minecraft для обучения языкам, математике, программированию, развитию лидерских и коммуникативных навыков",
+};
+
 export default function Posts() {
   const posts = [
     {
