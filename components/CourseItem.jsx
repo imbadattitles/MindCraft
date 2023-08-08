@@ -11,19 +11,31 @@ import { useState } from "react";
 
 const CourseItems = ({ theme }) => {
   const items = [
-    { name: "ОСНОВЫ ИНФОРМАТИКИ", cost: 1950 },
-    { name: "ПРОДВИНУТАЯ ИНФОРМАТИКА", cost: 1950 },
+    { name: "ОСНОВЫ ИНФОРМАТИКИ", cost: { month: 1950, year: 10000 } },
+    { name: "ПРОДВИНУТАЯ ИНФОРМАТИКА", cost: { month: 1950, year: 10000 } },
     { name: "ПОДГОТОВКА К ЕГЭ", cost: 1950 },
   ];
   const dispatch = useDispatch();
-  const addCourse = (item) => {
-    dispatch(pushItems({ ...item, count: 1 }));
+  const addCourse = (item, price) => {
+    console.log(price);
+    dispatch(
+      pushItems({
+        ...item,
+        count: 1,
+        type: price,
+        cost: typeof item.cost === "object" ? item.cost[price] : item.cost,
+      })
+    );
     dispatch(setAmount());
     setIncart([...incart, item.name]);
-    console.log(incart);
     dispatch(setTotalPrice());
   };
   const [incart, setIncart] = useState([]);
+  const [firstBlockPrice, setFirstBlockPrice] = useState("month");
+  const [secondBlockPrice, setSecondBlockPrice] = useState("month");
+  const [thirdBlockPrice, setThirdBlockPrice] = useState("month");
+  const [fourthBlockPrice, setFourthBlockPrice] = useState("month");
+  const [fifthBlockPrice, setFifthBlockPrice] = useState("month");
   return (
     <div className={`coursesBg-${theme} ${s.coursesBlock}`}>
       <div className={`${s.courseBlock} bg-white`}>
@@ -42,10 +54,41 @@ const CourseItems = ({ theme }) => {
               <span className={s.courseInfoAgeIcon} />
               <p>6-8, 9-10, 11-12 лет</p>
             </div>
-            <div className={s.courseInfoCost}>
-              <span className={s.courseInfoCostIcon} />
-              <p>{items[0].cost}</p>
-            </div>
+            {typeof items[0].cost == "object" ? (
+              <>
+                <div className={s.changeCostBtn}>
+                  <div
+                    onClick={() => setFirstBlockPrice("month")}
+                    className={`${
+                      firstBlockPrice == "month"
+                        ? s.changeCostBtnItemActive
+                        : s.changeCostBtnItem
+                    }`}
+                  >
+                    Месяц
+                  </div>
+                  <div
+                    onClick={() => setFirstBlockPrice("year")}
+                    className={`${
+                      firstBlockPrice == "year"
+                        ? s.changeCostBtnItemActive
+                        : s.changeCostBtnItem
+                    }`}
+                  >
+                    полугодие
+                  </div>
+                </div>
+                <div className={s.courseInfoCost}>
+                  <span className={s.courseInfoCostIcon} />
+                  <p>{items[0].cost[firstBlockPrice]}</p>
+                </div>
+              </>
+            ) : (
+              <div className={s.courseInfoCost}>
+                <span className={s.courseInfoCostIcon} />
+                <p>{items[0].cost}</p>
+              </div>
+            )}
           </div>
           <div className={s.courseTextBlock}>
             <div className={s.courseTextColumn}>
@@ -132,7 +175,7 @@ const CourseItems = ({ theme }) => {
               </button>
             ) : (
               <button
-                onClick={() => addCourse(items[0])}
+                onClick={() => addCourse(items[0], firstBlockPrice)}
                 className={`f12 bg-${theme} font-black ${s.courseInfoBtn}`}
               >
                 ЗАПИСАТЬСЯ
@@ -160,10 +203,41 @@ const CourseItems = ({ theme }) => {
               <span className={s.courseInfoAgeIcon} />
               <p>6-8, 9-10, 11-12 лет</p>
             </div>
-            <div className={s.courseInfoCost}>
-              <span className={s.courseInfoCostIcon} />
-              <p>1950 ₽</p>
-            </div>
+            {typeof items[1].cost == "object" ? (
+              <>
+                <div className={s.changeCostBtn}>
+                  <div
+                    onClick={() => setSecondBlockPrice("month")}
+                    className={`${
+                      secondBlockPrice == "month"
+                        ? s.changeCostBtnItemActive
+                        : s.changeCostBtnItem
+                    }`}
+                  >
+                    Месяц
+                  </div>
+                  <div
+                    onClick={() => setSecondBlockPrice("year")}
+                    className={`${
+                      secondBlockPrice == "year"
+                        ? s.changeCostBtnItemActive
+                        : s.changeCostBtnItem
+                    }`}
+                  >
+                    полугодие
+                  </div>
+                </div>
+                <div className={s.courseInfoCost}>
+                  <span className={s.courseInfoCostIcon} />
+                  <p>{items[1].cost[secondBlockPrice]}</p>
+                </div>
+              </>
+            ) : (
+              <div className={s.courseInfoCost}>
+                <span className={s.courseInfoCostIcon} />
+                <p>{items[1].cost}</p>
+              </div>
+            )}
           </div>
           <div className={s.courseTextBlock}>
             <div className={s.courseTextColumn}>
@@ -250,7 +324,7 @@ const CourseItems = ({ theme }) => {
               </button>
             ) : (
               <button
-                onClick={() => addCourse(items[1])}
+                onClick={() => addCourse(items[1], secondBlockPrice)}
                 className={`f12 bg-${theme} font-black ${s.courseInfoBtn}`}
               >
                 ЗАПИСАТЬСЯ
@@ -368,7 +442,7 @@ const CourseItems = ({ theme }) => {
               </button>
             ) : (
               <button
-                onClick={() => addCourse(items[2])}
+                onClick={() => addCourse(items[2], secondBlockPrice)}
                 className={`f12 bg-${theme} font-black ${s.courseInfoBtn}`}
               >
                 ЗАПИСАТЬСЯ

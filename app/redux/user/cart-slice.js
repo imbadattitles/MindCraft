@@ -34,6 +34,7 @@ export const cartSlice = createSlice({
     pushItems(state, action) {
       state.items.push(action.payload);
       state.amount = state.items.length;
+      console.log(action.payload);
     },
     setItems(state, action) {
       state.items = action.payload;

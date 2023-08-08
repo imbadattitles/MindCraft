@@ -2,6 +2,7 @@
 const { useState } = require("react");
 import Link from "next/link";
 import s from "../../styles/userPage.module.sass";
+import { ChangeInfo } from "@/components/ChangeInfo";
 
 export default function UserPage() {
   const [user, setUser] = useState({
@@ -18,6 +19,7 @@ export default function UserPage() {
   const [oldPassword, setOldPassword] = useState("");
   const [newPassword, setNewPassword] = useState("");
   const [repeatNewPassword, setRepeatNewPassword] = useState("");
+  const [changeInfo, setChangeInfo] = useState(0);
   return (
     <section className={s.section}>
       <div className="container">
@@ -98,50 +100,59 @@ export default function UserPage() {
                 <p className={s.leftInfo}>ТЕЛЕФОН</p>
                 <p className={s.RightInfo}>{user.phone}</p>
               </div>
-              <button className={`bg-green font-black btn232`}>
-                РЕДАКТИРОВАТЬ
+              <button
+                onClick={() => setChangeInfo(!changeInfo)}
+                className={`bg-green font-black btn232`}
+              >
+                {!changeInfo ? "РЕДАКТИРОВАТЬ" : "ОТМЕНИТЬ РЕДАКТИРОВАНИЕ"}
               </button>
               <span className={s.leftPic} />
             </div>
             <div className={s.RightColumn}>
               <span className={s.card_cube} />
               <span className={s.card_pic} />
-              <p className={`f28 ${s.formTitle}`}>Сменить пароль:</p>
-              <form className={s.form}>
-                <div className={"input60block"}>
-                  <p className="input60title">СТАРЫЙ ПАРОЛЬ</p>
-                  <input
-                    value={oldPassword}
-                    onChange={(e) => setOldPassword(e.targetValue)}
-                    type="password"
-                    className={`input60 f19`}
-                  />
-                </div>
-                <div className={"input60block"}>
-                  <p className="input60title">НОВЫЙ ПАРОЛЬ</p>
-                  <input
-                    value={newPassword}
-                    onChange={(e) => setNewPassword(e.targetValue)}
-                    type="password"
-                    className={`input60 f19`}
-                  />
-                </div>
-                <div className={"input60block"}>
-                  <p className="input60title">ПОВТОРИТЕ НОВЫЙ ПАРОЛЬ</p>
-                  <input
-                    value={repeatNewPassword}
-                    onChange={(e) => setRepeatNewPassword(e.targetValue)}
-                    type="password"
-                    className={`input60 f19`}
-                  />
-                </div>
-                <button
-                  type="submit"
-                  className={`btn209 f12 bg-green ${s.saveBtn}`}
-                >
-                  Сохранить
-                </button>
-              </form>
+              {!changeInfo ? (
+                <>
+                  <p className={`f28 ${s.formTitle}`}>Сменить пароль:</p>
+                  <form className={s.form}>
+                    <div className={"input60block"}>
+                      <p className="input60title">СТАРЫЙ ПАРОЛЬ</p>
+                      <input
+                        value={oldPassword}
+                        onChange={(e) => setOldPassword(e.targetValue)}
+                        type="password"
+                        className={`input60 f19`}
+                      />
+                    </div>
+                    <div className={"input60block"}>
+                      <p className="input60title">НОВЫЙ ПАРОЛЬ</p>
+                      <input
+                        value={newPassword}
+                        onChange={(e) => setNewPassword(e.targetValue)}
+                        type="password"
+                        className={`input60 f19`}
+                      />
+                    </div>
+                    <div className={"input60block"}>
+                      <p className="input60title">ПОВТОРИТЕ НОВЫЙ ПАРОЛЬ</p>
+                      <input
+                        value={repeatNewPassword}
+                        onChange={(e) => setRepeatNewPassword(e.targetValue)}
+                        type="password"
+                        className={`input60 f19`}
+                      />
+                    </div>
+                    <button
+                      type="submit"
+                      className={`btn209 f12 bg-green ${s.saveBtn}`}
+                    >
+                      Сохранить
+                    </button>
+                  </form>
+                </>
+              ) : (
+                <ChangeInfo />
+              )}
               <div className={s.links}>
                 <p className={`f28 ${s.linksTitle}`}>Привязать аккаунт</p>
                 <div className={s.linksRow}>
