@@ -13,7 +13,7 @@ const CourseItems = ({ theme }) => {
   const items = [
     { name: "ОСНОВЫ ИНФОРМАТИКИ", cost: { month: 1950, year: 10000 } },
     { name: "ПРОДВИНУТАЯ ИНФОРМАТИКА", cost: { month: 1950, year: 10000 } },
-    { name: "ПОДГОТОВКА К ЕГЭ", cost: 1950 },
+    { name: "ПОДГОТОВКА К ЕГЭ", cost: { month: 1950, year: 10000 } },
   ];
   const dispatch = useDispatch();
   const addCourse = (item, price) => {
@@ -56,13 +56,13 @@ const CourseItems = ({ theme }) => {
             </div>
             {typeof items[0].cost == "object" ? (
               <>
-                <div className={s.changeCostBtn}>
+                <div className={`${s.changeCostBtn} borderBtn-black`}>
                   <div
                     onClick={() => setFirstBlockPrice("month")}
                     className={`${
                       firstBlockPrice == "month"
-                        ? s.changeCostBtnItemActive
-                        : s.changeCostBtnItem
+                        ? `${s.changeCostBtnItem} bg-black font-white`
+                        : `${s.changeCostBtnItem} font-black`
                     }`}
                   >
                     Месяц
@@ -71,8 +71,8 @@ const CourseItems = ({ theme }) => {
                     onClick={() => setFirstBlockPrice("year")}
                     className={`${
                       firstBlockPrice == "year"
-                        ? s.changeCostBtnItemActive
-                        : s.changeCostBtnItem
+                        ? `${s.changeCostBtnItem} bg-black font-white`
+                        : `${s.changeCostBtnItem} font-black`
                     }`}
                   >
                     полугодие
@@ -205,13 +205,13 @@ const CourseItems = ({ theme }) => {
             </div>
             {typeof items[1].cost == "object" ? (
               <>
-                <div className={s.changeCostBtn}>
+                <div className={`${s.changeCostBtn} borderBtn-black`}>
                   <div
                     onClick={() => setSecondBlockPrice("month")}
                     className={`${
                       secondBlockPrice == "month"
-                        ? s.changeCostBtnItemActive
-                        : s.changeCostBtnItem
+                        ? `${s.changeCostBtnItem} bg-black font-white`
+                        : `${s.changeCostBtnItem} font-black`
                     }`}
                   >
                     Месяц
@@ -220,8 +220,8 @@ const CourseItems = ({ theme }) => {
                     onClick={() => setSecondBlockPrice("year")}
                     className={`${
                       secondBlockPrice == "year"
-                        ? s.changeCostBtnItemActive
-                        : s.changeCostBtnItem
+                        ? `${s.changeCostBtnItem} bg-black font-white`
+                        : `${s.changeCostBtnItem} font-black`
                     }`}
                   >
                     полугодие
@@ -352,10 +352,41 @@ const CourseItems = ({ theme }) => {
               <span className={s.courseInfoAgeIcon} />
               <p>6-8, 9-10, 11-12 лет</p>
             </div>
-            <div className={s.courseInfoCost}>
-              <span className={s.courseInfoCostIcon} />
-              <p>1950 ₽</p>
-            </div>
+            {typeof items[2].cost == "object" ? (
+              <>
+                <div className={`${s.changeCostBtn} borderBtn-${theme}`}>
+                  <div
+                    onClick={() => setThirdBlockPrice("month")}
+                    className={`${
+                      thirdBlockPrice == "month"
+                        ? `${s.changeCostBtnItem} bg-${theme} font-black`
+                        : `${s.changeCostBtnItem} font-white`
+                    }`}
+                  >
+                    Месяц
+                  </div>
+                  <div
+                    onClick={() => setThirdBlockPrice("year")}
+                    className={`${
+                      thirdBlockPrice == "year"
+                        ? `${s.changeCostBtnItem} bg-${theme} font-black`
+                        : `${s.changeCostBtnItem} font-white`
+                    }`}
+                  >
+                    полугодие
+                  </div>
+                </div>
+                <div className={s.courseInfoCost}>
+                  <span className={s.courseInfoCostIcon} />
+                  <p>{items[2].cost[thirdBlockPrice]}</p>
+                </div>
+              </>
+            ) : (
+              <div className={s.courseInfoCost}>
+                <span className={s.courseInfoCostIcon} />
+                <p>{items[2].cost}</p>
+              </div>
+            )}
           </div>
           <div className={s.courseTextBlock}>
             <div className={s.courseTextColumn}>
