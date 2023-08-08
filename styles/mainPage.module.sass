@@ -370,14 +370,16 @@
         margin-bottom: 50px
 
 .preparingBg
-    position: absolute
-    width: 1440px
-    height: 1429px
-    background-repeat: no-repeat
     background-image: url(/mainPage/preparingBg.png)
-    left: 0
-    top: -60px
-    display: none
+    background-repeat: no-repeat
+    width: 100%
+    background-size: 1920px 1400px
+    height: 1450px
+    position: absolute
+    top: -100px
+    z-index: 0
+    @media screen and (max-width: 960px)
+        display: none
 
 .preparingTitle
     margin-bottom: 240px
