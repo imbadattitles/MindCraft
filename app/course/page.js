@@ -12,6 +12,29 @@ export default function course() {
     title: "ИНФОРМАТИКА / ПРОГРАММИРОВАНИЕ",
     text: "Используем платформу Minecraft для обучения языкам, математике, программированию, развитию лидерских и коммуникативных навыков",
   };
+  const items = [
+    {
+      name: "ОСНОВЫ ИНФОРМАТИКИ",
+      cost: { month: 1950, year: 10000 },
+      age: ["8-9", "9-10", "11-12"],
+    },
+    {
+      name: "ПРОДВИНУТАЯ ИНФОРМАТИКА",
+      cost: { month: 1950, year: 10000 },
+      age: ["11-12", "12-13", "13-14"],
+    },
+    {
+      name: "ПОДГОТОВКА К ЕГЭ",
+      cost: { month: 1950, year: 10000 },
+      age: ["11-12", "13-14"],
+    },
+    {
+      name: "ПОДГОТОВКА К ЕГЭээ",
+      cost: { month: 323, year: 1213 },
+      age: ["13-14"],
+    },
+    { name: "ПОДГОТОВКА К ЕГЭ123", cost: 12345, age: [8] },
+  ];
   return (
     <div>
       <section className={s.main}>
@@ -68,11 +91,7 @@ export default function course() {
         </div>
       </section>
       <section className={s.coursesSection}>
-        <div className={`container ${s.titleRow}`}>
-          <h3 className={`f40 font-${theme}`}>ПРОГРАММЫ</h3>
-          <SelectRadio />
-        </div>
-        <CourseItems theme={theme} />
+        <CourseItems theme={theme} notFiltered={items} />
       </section>
       <section className={s.howLearn}>
         <div className="container">

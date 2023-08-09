@@ -1,5 +1,6 @@
 import Link from "next/link";
 import s from "../../styles/posts.module.sass";
+import { News } from "@/components/News";
 
 export const metadata = {
   title: "Новости MindCraft",
@@ -8,12 +9,18 @@ export const metadata = {
 };
 
 export default function Posts() {
+  const categories = [
+    { value: "", title: "Все" },
+    { value: "Первая категория", title: "Первая категория" },
+    { value: "Вторая категория", title: "Вторая категория" },
+  ];
   const posts = [
     {
       name: "kek",
       img: "/pic.png",
       title: "Определенный эйдос глазами современников",
       date: "09.2023 . 12:30",
+      category: "Первая категория",
       text: "Механизм эвокации органичен. Холерик, так или иначе, традиционен. Переживание и его претворение, на первый взгляд, гармонично. Беспристрастный анализ любого творческого акта показывает, что мистерия свободна.",
     },
     {
@@ -26,6 +33,7 @@ export default function Posts() {
     {
       name: "kek",
       img: "/pic.png",
+      category: "Первая категория",
       title: "Определенный эйдос глазами современников",
       date: "09.2023 . 12:30",
       text: "Механизм эвокации органичен. Холерик, так или иначе, традиционен. Переживание и его претворение, на первый взгляд, гармонично. Беспристрастный анализ любого творческого акта показывает, что мистерия свободна.",
@@ -33,6 +41,7 @@ export default function Posts() {
     {
       name: "kek",
       img: "/pic.png",
+      category: "Вторая категория",
       title: "Определенный эйдос глазами современников",
       date: "09.2023 . 12:30",
       text: "Механизм эвокации органичен. Холерик, так или иначе, традиционен. Переживание и его претворение, на первый взгляд, гармонично. Беспристрастный анализ любого творческого акта показывает, что мистерия свободна.",
@@ -70,41 +79,7 @@ export default function Posts() {
     <section className={`${s.section}`}>
       <div className="container">
         <h2 className={`f40 font-green ${s.title}`}>НОВОСТИ</h2>
-        <div className={s.choose}>
-          <div className={`${s.chooseBtn} ${s.active}`}>
-            <span className={s.chooseBtnIcon} />
-            <p className={`f13`}>НАЗВАНИЕ РУБРИКИ</p>
-          </div>
-          <div className={`${s.chooseBtn}`}>
-            <span className={s.chooseBtnIcon} />
-            <p className={`f13`}>НАЗВАНИЕ РУБРИКИ</p>
-          </div>
-          <div className={`${s.chooseBtn}`}>
-            <span className={s.chooseBtnIcon} />
-            <p className={`f13`}>НАЗВАНИЕ РУБРИКИ</p>
-          </div>
-          <div className={s.cancel}>
-            <p className="f20"></p>
-            <span className={s.line} />
-          </div>
-        </div>
-        <div className={s.posts}>
-          {posts.map((item) => (
-            <article key={item.name} className={s.post}>
-              <img src={item.img} className={s.postImg} />
-              <p className={`f13 font-green ${s.date}`}>{item.date}</p>
-              <Link href="/" className={`f19 ${s.postTitle}`}>
-                {item.title}
-              </Link>
-              <p className={`f14 ${s.postText}`}>{item.text}</p>
-              <Link href="/">
-                <button className={`bg-green arrowBtn-small`}>
-                  <span className="arrowSml" />
-                </button>
-              </Link>
-            </article>
-          ))}
-        </div>
+        <News items={posts} categories={categories} />
       </div>
     </section>
   );

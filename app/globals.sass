@@ -17,7 +17,7 @@ html, body
   color: white
   overflow-x: hidden
   scroll-behavior: smooth
-  
+
 .container
   margin: auto
   max-width: 1360px
@@ -894,6 +894,7 @@ button
   letter-spacing: 0.39px
 
 .form_radio-blue
+  z-index: 5
   position: absolute
   top: 45px
   display: flex
@@ -904,8 +905,13 @@ button
   padding-bottom: 7px
   border: 1px solid #3CFDFF
   background: black
+  @media screen and (max-width: 960px)
+    top: 28px
+    @media screen and (max-width: 560px)
+      top: 62px
 
 .form_radio
+  z-index: 5
   display: flex
   align-items: center
   align-content: center
@@ -914,6 +920,7 @@ button
   display: none
 
 .form_radio label 
+  z-index: 5
   display: flex
   cursor: pointer
   position: relative
@@ -924,6 +931,7 @@ button
   user-select: none
 
 .form_radio label:before 
+  z-index: 5
   content: ""
   display: block
   margin-right: 6px
