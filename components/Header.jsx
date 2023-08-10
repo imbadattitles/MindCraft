@@ -20,13 +20,13 @@ const Header = () => {
         </Link>
         <ul className="f12_5">
           <li>
-            <Link href="#ourProgram">Программы</Link>
+            <Link href="/#ourProgram">Программы</Link>
           </li>
           <li>
-            <Link href="#preparing">Платформа</Link>
+            <Link href="/#preparing">Платформа</Link>
           </li>
           <li>
-            <Link href="#ourMentors">Преподаватели</Link>
+            <Link href="/#ourMentors">Преподаватели</Link>
           </li>
           <li>
             <Link href="/about">О minecraft</Link>

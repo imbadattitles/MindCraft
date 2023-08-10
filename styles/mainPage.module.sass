@@ -76,6 +76,7 @@
         gap: 25px
         margin-top: 70px
         padding-left: 60px
+        margin-bottom: 80px
         
 
 .benefit_pic
@@ -392,6 +393,7 @@
     justify-content: space-between
     @media screen and (max-width: 960px)
         justify-content: space-around
+        gap: 300px
     @media screen and (max-width: 560px)
         justify-content: flex-start
         gap: 250px
@@ -468,8 +470,10 @@
     display: flex 
     justify-content: space-between
     flex-wrap: wrap
-    @media screen and (max-width: 560px)
-        gap: 20px
+    @media screen and (max-width: 960px)
+        gap: 50px
+        @media screen and (max-width: 560px)
+            gap: 20px
         
 .mainForm
     height: 540px
@@ -517,12 +521,16 @@
     background-image: url(/mainPage/borderTop.png)
     position: absolute
     top: 10px
-    right: 50px
-    @media screen and (max-width: 560px)
-        background-size: contain
-        height: 25px
-        top: 0
-        left: 220px
+    left: 700px
+    @media screen and (max-width: 960px)
+        left: 380px
+        width: 50%
+        @media screen and (max-width: 560px)
+            width: 100%
+            background-size: contain
+            height: 25px
+            top: 0
+            left: 220px
         
 
 .borderRight
@@ -547,11 +555,14 @@
     position: absolute
     bottom: -77px
     right: 50px
-    @media screen and (max-width: 560px)
-        background-size: contain
-        height: 25px
-        bottom: -50px
-        right: 0px
+    @media screen and (max-width: 960px)
+        width: 90%
+        @media screen and (max-width: 560px)
+            width: 1236px
+            background-size: contain
+            height: 25px
+            bottom: -50px
+            right: 0px
         
 
 .borderLeft
@@ -609,6 +620,32 @@
     
 .none
     display: none
+
+
+.goodResult
+    display: flex
+    align-items: center
+    position: absolute
+    left: 50%
+    top: 55%
+    transform: translate(-50%,-50%)
+    width: 850px
+    @media screen and (max-width: 960px)
+        flex-direction: column-reverse
+        width: 80%
+        align-items: flex-start
+        left: 10%
+        transform: translate(-0%,-50%)
+
+.goodResultPic
+    min-width: 200px
+    min-height: 227px
+    background-size: contain
+    background-repeat: no-repeat
+    background-image: url('/mainPage/goodResultPic.png')
+    @media screen and (max-width: 560px)
+        min-height: 180px
+        min-width: 150px
 
 .FAQ
     margin-bottom: 130px
