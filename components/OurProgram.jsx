@@ -73,7 +73,7 @@ const OurProgram = () => {
                   </div>
                   <div className={s.slideItemBtns}>
                     <Link href="/course">
-                      <button className={`btn180 f11 font-black bg-green`}>
+                      <button className={` f11 btn180  font-black bg-green`}>
                         ЗАПИСАТЬСЯ
                       </button>
                     </Link>

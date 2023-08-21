@@ -186,17 +186,19 @@ export default function UserPage() {
           <p className={s.resultSum}>
             Итого <span style={{ fontWeight: "500" }}>{totalPrice} ₽</span>
           </p>
-          <button
-            onClick={() => {
-              if (items.length >= 1 || coins.length >= 1) setVisibleBlock(2);
-            }}
-            className={`bg-green font-black btn232 ${s.cartGoBtn}`}
-          >
-            ОФОРМИТЬ ЗАКАЗ
-          </button>
+          {items.length >= 1 || coins.length >= 1 ? (
+            <Link href={"/order"}>
+              <button className={`bg-green font-black btn232 ${s.cartGoBtn}`}>
+                ОФОРМИТЬ ЗАКАЗ
+              </button>
+            </Link>
+          ) : (
+            <button className={`bg-green font-black btn232 ${s.cartGoBtn}`}>
+              ОФОРМИТЬ ЗАКАЗ
+            </button>
+          )}
         </>
       )}
-      {visibleBlock === 2 && <Order setVisibleBlock={setVisibleBlock} />}
     </section>
   );
 }

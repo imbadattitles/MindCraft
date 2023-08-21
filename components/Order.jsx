@@ -18,8 +18,28 @@ const Order = ({ setVisibleBlock }) => {
   const [born, setBorn] = useState("");
   const [newNickname, setNewNickName] = useState("");
   const [time, setTime] = useState("");
-  const [password, setPassword] = useState("");
-  const [repeatPassword, setRepeatPassword] = useState("");
+  const [password, setPassword] = useState({
+    value: "",
+    type: "password",
+  });
+  const [repeatPassword, setRepeatPassword] = useState({
+    value: "",
+    type: "password",
+  });
+  const changeType = (input, changeInput) => {
+    console.log(input);
+    if (input.type === "password") {
+      changeInput({
+        value: input.value,
+        type: "text",
+      });
+    } else {
+      changeInput({
+        value: input.value,
+        type: "password",
+      });
+    }
+  };
   return (
     <>
       <div className={s.titleRow}>
@@ -62,10 +82,10 @@ const Order = ({ setVisibleBlock }) => {
           <p className={s.orderInfoResult}>
             Итого: <span style={{ fontWeight: "500" }}>{totalPrice} ₽</span>
           </p>
-          <div onClick={() => setVisibleBlock(1)} className={s.back}>
+          <Link href={"/cart"} className={s.back}>
             <span className={s.backArrow} />
             <p className={s.backText}>Вернуться в корзину</p>
-          </div>
+          </Link>
         </div>
         <form className={s.orderForm}>
           <span className={s.leftBg} />
@@ -131,19 +151,39 @@ const Order = ({ setVisibleBlock }) => {
             <p className={s.typeInput}>ПАРОЛЬ</p>
             <p className="input60title">ВВЕДИТЕ ПАРОЛЬ</p>
             <input
-              value={password}
-              onChange={(e) => setPassword(e.targetValue)}
-              type="password"
+              value={password.value}
+              onChange={(e) =>
+                setPassword({
+                  value: e.targetValue,
+                  type: password.type,
+                })
+              }
+              type={password.type}
               className={`input60 f19`}
+            />
+            <span
+              onClick={() => changeType(password, setPassword)}
+              className={`inputPasswordIcon`}
+              style={password.type == "text" ? { opacity: "40%" } : {}}
             />
           </div>
           <div className={"input60block"}>
             <p className="input60title">ПОВТОРИТЕ ПАРОЛЬ</p>
             <input
-              value={repeatPassword}
-              onChange={(e) => setRepeatPassword(e.targetValue)}
-              type="password"
+              value={repeatPassword.value}
+              onChange={(e) =>
+                setRepeatPassword({
+                  value: e.targetValue,
+                  type: repeatPassword.type,
+                })
+              }
+              type={repeatPassword.type}
               className={`input60 f19`}
+            />
+            <span
+              onClick={() => changeType(repeatPassword, setRepeatPassword)}
+              className={`inputPasswordIcon`}
+              style={repeatPassword.type == "text" ? { opacity: "40%" } : {}}
             />
           </div>
           <label class={`label`}>
@@ -156,10 +196,12 @@ const Order = ({ setVisibleBlock }) => {
               </Link>
             </p>
           </label>
-          <input
+          <button
             type="submit"
             className={`btn209 f12_Unbounded font-black bg-green`}
-          ></input>
+          >
+            ОТПРАВИТЬ
+          </button>
         </form>
       </div>
     </>

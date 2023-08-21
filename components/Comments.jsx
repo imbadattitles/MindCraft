@@ -35,52 +35,48 @@ const Comments = () => {
       <div className="container">
         <p className={`f28 font-green`}>КОММЕНТАРИИ ({comments.length}):</p>
         <div className={s.commentsGrid}>
-          {comments.length ? (
-            <>
-              {comments.map((item) => (
-                <>
-                  <div key={item.name} className={s.commentInfo}>
-                    <div className={s.picContainer}>
-                      <span className={s.formCube1} />
-                      <img src={item.img} className={s.commentPic} />
-                    </div>
-                    <div>
-                      <p className={s.commentName}>{item.name}</p>
-                      <p className={s.commentDate}>{item.date}</p>
-                    </div>
+          <>
+            {comments.map((item) => (
+              <>
+                <div key={item.name} className={s.commentInfo}>
+                  <div className={s.picContainer}>
+                    <span className={s.formCube1} />
+                    <img src={item.img} className={s.commentPic} />
                   </div>
-                  <div className={s.commentText}>
-                    <span className={s.polygon} />
-                    {item.comment}
+                  <div>
+                    <p className={s.commentName}>{item.name}</p>
+                    <p className={s.commentDate}>{item.date}</p>
                   </div>
-                  {item.answer && (
-                    <>
-                      <div
-                        key={item.answer.name}
-                        className={`${s.commentInfo} ${s.commentInfoAnswer}`}
-                      >
-                        <div className={s.picContainer}>
-                          <span className={s.formCube2} />
-                          <span className={s.answerArrow} />
-                          <img src={item.answer.img} className={s.commentPic} />
-                        </div>
-                        <div>
-                          <p className={s.commentName}>{item.answer.name}</p>
-                          <p className={s.commentDate}>{item.answer.date}</p>
-                        </div>
+                </div>
+                <div className={s.commentText}>
+                  <span className={s.polygon} />
+                  {item.comment}
+                </div>
+                {item.answer && (
+                  <>
+                    <div
+                      key={item.answer.name}
+                      className={`${s.commentInfo} ${s.commentInfoAnswer}`}
+                    >
+                      <div className={s.picContainer}>
+                        <span className={s.formCube2} />
+                        <span className={s.answerArrow} />
+                        <img src={item.answer.img} className={s.commentPic} />
                       </div>
-                      <div className={`${s.commentText} ${s.commentAnswer}`}>
-                        <span className={s.polygon} />
-                        {item.answer.comment}
+                      <div>
+                        <p className={s.commentName}>{item.answer.name}</p>
+                        <p className={s.commentDate}>{item.answer.date}</p>
                       </div>
-                    </>
-                  )}
-                </>
-              ))}
-            </>
-          ) : (
-            <p className={s.noComments}>Комментарий нет</p>
-          )}
+                    </div>
+                    <div className={`${s.commentText} ${s.commentAnswer}`}>
+                      <span className={s.polygon} />
+                      {item.answer.comment}
+                    </div>
+                  </>
+                )}
+              </>
+            ))}
+          </>
           <form className={s.commentForm}>
             <textarea
               className={`${s.formInput} ${s.textarea}`}

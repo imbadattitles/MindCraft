@@ -16,10 +16,34 @@ export default function UserPage() {
     links: { discord: false, telegram: false, vk: "Petya_Smirnov" },
   });
   const [activeMenu, setActiveMenu] = useState(1);
-  const [oldPassword, setOldPassword] = useState("");
-  const [newPassword, setNewPassword] = useState("");
-  const [repeatNewPassword, setRepeatNewPassword] = useState("");
+  const [oldPassword, setOldPassword] = useState({
+    value: "",
+    type: "password",
+  });
+  const [newPassword, setNewPassword] = useState({
+    value: "",
+    type: "password",
+  });
+  const [repeatNewPassword, setRepeatNewPassword] = useState({
+    value: "",
+    type: "password",
+  });
   const [changeInfo, setChangeInfo] = useState(0);
+
+  const changeType = (input, changeInput) => {
+    console.log(input);
+    if (input.type === "password") {
+      changeInput({
+        value: input.value,
+        type: "text",
+      });
+    } else {
+      changeInput({
+        value: input.value,
+        type: "password",
+      });
+    }
+  };
   return (
     <section className={s.section}>
       <div className="container">
@@ -118,28 +142,68 @@ export default function UserPage() {
                     <div className={"input60block"}>
                       <p className="input60title">СТАРЫЙ ПАРОЛЬ</p>
                       <input
-                        value={oldPassword}
-                        onChange={(e) => setOldPassword(e.targetValue)}
-                        type="password"
+                        value={oldPassword.value}
+                        onChange={(e) =>
+                          setOldPassword({
+                            value: e.targetValue,
+                            type: oldPassword.type,
+                          })
+                        }
+                        type={oldPassword.type}
                         className={`input60 f19`}
+                      />
+                      <span
+                        onClick={() => changeType(oldPassword, setOldPassword)}
+                        className={`inputPasswordIcon`}
+                        style={
+                          oldPassword.type == "text" ? { opacity: "40%" } : {}
+                        }
                       />
                     </div>
                     <div className={"input60block"}>
                       <p className="input60title">НОВЫЙ ПАРОЛЬ</p>
                       <input
-                        value={newPassword}
-                        onChange={(e) => setNewPassword(e.targetValue)}
-                        type="password"
+                        value={newPassword.value}
+                        onChange={(e) =>
+                          setNewPassword({
+                            value: e.targetValue,
+                            type: newPassword.type,
+                          })
+                        }
+                        type={newPassword.type}
                         className={`input60 f19`}
+                      />
+                      <span
+                        onClick={() => changeType(newPassword, setNewPassword)}
+                        className={`inputPasswordIcon`}
+                        style={
+                          newPassword.type == "text" ? { opacity: "40%" } : {}
+                        }
                       />
                     </div>
                     <div className={"input60block"}>
                       <p className="input60title">ПОВТОРИТЕ НОВЫЙ ПАРОЛЬ</p>
                       <input
-                        value={repeatNewPassword}
-                        onChange={(e) => setRepeatNewPassword(e.targetValue)}
-                        type="password"
+                        value={repeatNewPassword.value}
+                        onChange={(e) =>
+                          setRepeatNewPassword({
+                            value: e.targetValue,
+                            type: repeatNewPassword.type,
+                          })
+                        }
+                        type={repeatNewPassword.type}
                         className={`input60 f19`}
+                      />
+                      <span
+                        onClick={() =>
+                          changeType(repeatNewPassword, setRepeatNewPassword)
+                        }
+                        className={`inputPasswordIcon`}
+                        style={
+                          repeatNewPassword.type == "text"
+                            ? { opacity: "40%" }
+                            : {}
+                        }
                       />
                     </div>
                     <button

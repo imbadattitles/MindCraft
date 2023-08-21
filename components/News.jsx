@@ -29,6 +29,10 @@ const News = ({ items, categories }) => {
             <p className={`f13`}>{cat.title}</p>
           </div>
         ))}
+        <div onClick={() => chooseCategory(categories[0])} className={s.cancel}>
+          <p>Сбросить выбор</p>
+          <span>.......................</span>
+        </div>
       </div>
       <div className={s.posts}>
         {posts.map((item) => (

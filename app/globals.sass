@@ -305,10 +305,10 @@ button
     
 
 .tableScroll
-  overflow-x: auto
   margin-bottom: 50px
   @media screen and (max-width: 960px)
     margin-bottom: 20px
+    overflow-x: scroll
   
 
 .tableHeader
@@ -346,6 +346,7 @@ button
 
 
 .input60block
+  position: relative
   margin-bottom: 24px
   @media screen and (max-width: 960px)
     margin-bottom: 10px
@@ -360,6 +361,18 @@ button
   margin-bottom: 8px
   @media screen and (max-width: 960px)
     font-size: 10px
+    
+
+.inputPasswordIcon
+  cursor: pointer
+  position: absolute
+  bottom: 12px
+  right: 16px
+  width: 38px
+  height: 38px
+  background-repeat: no-repeat
+  background-size: contain
+  background-image: url('/inputPasswordIcon.png')
 
 .input60
   width: 580px
@@ -430,7 +443,9 @@ button
     
 .form__checkbox:checked + .fake:after
     opacity: 1
-
+.f17
+  font-family: Circe
+  font-size: 17px
 .fake:after
     content: ''
     position: absolute
@@ -490,7 +505,7 @@ button
   border-radius: 100px
   text-transform: uppercase
   border: none
-  font-weight: 600
+  font-weight: 700
   @media screen and (max-width: 960px)
     width: 100%
 
@@ -501,7 +516,7 @@ button
   border-radius: 86px
   text-transform: uppercase
   border: none
-  font-weight: 700
+  font-weight: 700 !important
   @media screen and (max-width: 560px)
     width: 155px
     height: 38px
@@ -512,7 +527,7 @@ button
   border-radius: 100px
   text-transform: uppercase
   border: none
-  font-weight: 600
+  font-weight: 700
   @media screen and (max-width: 960px)
     width: 100%
 

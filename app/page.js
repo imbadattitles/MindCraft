@@ -5,6 +5,7 @@ import s from "../styles/mainPage.module.sass";
 import { FAQ } from "@/components/FAQ";
 import { useState } from "react";
 import { OurProgram } from "@/components/OurProgram";
+import Link from "next/link";
 
 export default function Home() {
   return (
@@ -30,9 +31,11 @@ export default function Home() {
           </h4>
           <div className={s.btnRow}>
             <span className={s.blurUnderBtn} />
-            <button className="btn232 f12_Unbounded shadow-green_main font-black bg-greenMain">
-              ПОПРОБОВАТЬ
-            </button>
+            <Link href={"/#form"}>
+              <button className="btn232 f12_Unbounded shadow-green_main font-black bg-greenMain">
+                ПОПРОБОВАТЬ
+              </button>
+            </Link>
           </div>
         </div>
       </section>
@@ -166,7 +169,7 @@ export default function Home() {
             <div className={s.ourPlatformBenefit}>
               <img
                 className={s.ourPlatformBenefit_pic}
-                alt="Безопасная платформа, где можно общаться с другими учениками, и преподавателями, курируется модераторами"
+                alt="Безопасная платформа, где можно общаться с другими учениками и преподавателями, курируется модераторами"
                 src="/mainPage/ourPlatformBenefit1.png"
               />
               <h6 className={`f20 ${s.ourPlatformBenefit_text}`}>
@@ -270,7 +273,7 @@ export default function Home() {
           </div>
         </div>
       </section>
-      <section className={s.mainFormSec}>
+      <section id="form" className={s.mainFormSec}>
         <span className={s.mainFormBg} />
         <div className="container">
           <SignUpCurse />
