@@ -12,8 +12,7 @@ import "swiper/css/pagination";
 import "swiper/css/scrollbar";
 import Link from "next/link";
 
-const mas = [1, 2, 3, 4, 5];
-const OurProgram = () => {
+const OurProgram = ({ items }) => {
   return (
     <section id="ourProgram" className={s.ourProgram}>
       <span className={s.learnBg1} />
@@ -43,7 +42,7 @@ const OurProgram = () => {
             spaceBetween={35}
             navigation={{}}
           >
-            {mas.map((item) => (
+            {items.map((item) => (
               <SwiperSlide key={item}>
                 <div className={`${s.slideItem} ${s.slideItem_green}`}>
                   <div className={s.slidePic}>
@@ -108,7 +107,7 @@ const OurProgram = () => {
             spaceBetween={35}
             navigation
           >
-            {mas.map((item) => (
+            {items.map((item) => (
               <SwiperSlide key={item}>
                 <div className={`${s.slideItem} ${s.slideItem_blue}`}>
                   <div className={s.slidePic}>
@@ -173,7 +172,7 @@ const OurProgram = () => {
             spaceBetween={35}
             navigation
           >
-            {mas.map((item) => (
+            {items.map((item) => (
               <SwiperSlide key={item}>
                 <div className={`${s.slideItem} ${s.slideItem_red}`}>
                   <div className={s.slidePic}>
@@ -238,7 +237,7 @@ const OurProgram = () => {
             spaceBetween={35}
             navigation
           >
-            {mas.map((item) => (
+            {items.map((item) => (
               <SwiperSlide key={item}>
                 <div className={`${s.slideItem} ${s.slideItem_purple}`}>
                   <div className={s.slidePic}>

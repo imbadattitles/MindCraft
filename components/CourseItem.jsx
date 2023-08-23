@@ -37,19 +37,22 @@ const CourseItems = ({ theme, notFiltered }) => {
     <>
       <div className={`container ${s.titleRow}`}>
         <h3 className={`f40 font-${theme}`}>ПРОГРАММЫ</h3>
-        <SelectRadio notFiltered={notFiltered} setItems={setItems} />
+        <SelectRadio
+          notFiltered={notFiltered}
+          setItems={setItems}
+          theme={theme}
+        />
       </div>
       <div className={`coursesBg-${theme} ${s.coursesBlock}`}>
         {items[0] && (
           <>
             <div className={`${s.courseBlock} bg-white`}>
-              <span className={`shape-${theme}`} />
+              <span className={`shape shape-${theme}`} />
               <div className={s.courseTop}>
                 <div className={s.picContainer}>
                   <img src="/courses/coursePic1.png" className={s.courseImg} />
                 </div>
                 <span className={s.courseBlack} />
-                <span className={`coursePic-${theme}`} />
                 <h3 className={`f40 font-${theme}`}>{items[0].name}</h3>
               </div>
               <div className={s.courseBottom}>
@@ -128,7 +131,7 @@ const CourseItems = ({ theme, notFiltered }) => {
                     </ul>
                   </div>
                   <div className={s.courseTextColumn}>
-                    <h3 className={`f19 font-black`}>ЧТО БУДЕМ ИЗУЧАТЬ</h3>
+                    <h3 className={`f19 font-black`}>ЧТО БУДЕМ ПРОХОДИТЬ:</h3>
                     <ul className={s.courseTextList}>
                       <li className={`f17 font-black ${s.courseTextItem2}`}>
                         <span className={s.courseTextIcon} />
@@ -198,13 +201,12 @@ const CourseItems = ({ theme, notFiltered }) => {
         {items[1] && (
           <>
             <div className={`${s.courseBlock} bg-${theme}`}>
-              <span className={`shape-${theme}`} />
+              <span className={`shape shape-${theme}`} />
               <div className={s.courseTop}>
                 <div className={s.picContainer}>
                   <img src="/courses/coursePic1.png" className={s.courseImg} />
                 </div>
                 <span className={s.courseBlack} />
-                <span className={`coursePic-${theme}`} />
                 <h3 className={`f40 font-${theme}`}>ОСНОВЫ ИНФОРМАТИКИ</h3>
               </div>
               <div className={s.courseBottom}>
@@ -283,7 +285,7 @@ const CourseItems = ({ theme, notFiltered }) => {
                     </ul>
                   </div>
                   <div className={s.courseTextColumn}>
-                    <h3 className={`f19 font-black`}>ЧТО БУДЕМ ИЗУЧАТЬ</h3>
+                    <h3 className={`f19 font-black`}>ЧТО БУДЕМ ПРОХОДИТЬ:</h3>
                     <ul className={s.courseTextList}>
                       <li className={`f17 font-black ${s.courseTextItem2}`}>
                         <span className={s.courseTextIcon} />
@@ -353,13 +355,12 @@ const CourseItems = ({ theme, notFiltered }) => {
         {items[2] && (
           <>
             <div className={`${s.courseBlock} bg-black`}>
-              <span className={`shape-${theme}`} />
+              <span className={`shape shape-${theme}`} />
               <div className={s.courseTop}>
                 <div className={s.picContainer}>
                   <img src="/courses/coursePic1.png" className={s.courseImg} />
                 </div>
                 <span className={`${s.courseBlack} borderBottom-${theme}`} />
-                <span className={`coursePic-${theme}`} />
                 <h3 className={`f40 font-${theme}`}>ОСНОВЫ ИНФОРМАТИКИ</h3>
               </div>
               <div className={s.courseBottom}>
@@ -438,7 +439,9 @@ const CourseItems = ({ theme, notFiltered }) => {
                     </ul>
                   </div>
                   <div className={s.courseTextColumn}>
-                    <h3 className={`f19 font-${theme}`}>ЧТО БУДЕМ ИЗУЧАТЬ</h3>
+                    <h3 className={`f19 font-${theme}`}>
+                      ЧТО БУДЕМ ПРОХОДИТЬ:
+                    </h3>
                     <ul className={s.courseTextList}>
                       <li className={`f17 font-black ${s.courseTextItem2}`}>
                         <span className={s.courseTextIcon} />
@@ -508,13 +511,12 @@ const CourseItems = ({ theme, notFiltered }) => {
         {items[3] && (
           <>
             <div className={`${s.courseBlock} bg-white`}>
-              <span className={`shape-${theme}`} />
+              <span className={`shape shape-${theme}`} />
               <div className={s.courseTop}>
                 <div className={s.picContainer}>
                   <img src="/courses/coursePic1.png" className={s.courseImg} />
                 </div>
                 <span className={s.courseBlack} />
-                <span className={`coursePic-${theme}`} />
                 <h3 className={`f40 font-${theme}`}>{items[0].name}</h3>
               </div>
               <div className={s.courseBottom}>
@@ -593,7 +595,7 @@ const CourseItems = ({ theme, notFiltered }) => {
                     </ul>
                   </div>
                   <div className={s.courseTextColumn}>
-                    <h3 className={`f19 font-black`}>ЧТО БУДЕМ ИЗУЧАТЬ</h3>
+                    <h3 className={`f19 font-black`}>ЧТО БУДЕМ ПРОХОДИТЬ:</h3>
                     <ul className={s.courseTextList}>
                       <li className={`f17 font-black ${s.courseTextItem2}`}>
                         <span className={s.courseTextIcon} />
@@ -663,13 +665,12 @@ const CourseItems = ({ theme, notFiltered }) => {
         {items[4] && (
           <>
             <div className={`${s.courseBlock} bg-${theme}`}>
-              <span className={`shape-${theme}`} />
+              <span className={`shape shape-${theme}`} />
               <div className={s.courseTop}>
                 <div className={s.picContainer}>
                   <img src="/courses/coursePic1.png" className={s.courseImg} />
                 </div>
                 <span className={s.courseBlack} />
-                <span className={`coursePic-${theme}`} />
                 <h3 className={`f40 font-${theme}`}>ОСНОВЫ ИНФОРМАТИКИ</h3>
               </div>
               <div className={s.courseBottom}>
@@ -748,7 +749,7 @@ const CourseItems = ({ theme, notFiltered }) => {
                     </ul>
                   </div>
                   <div className={s.courseTextColumn}>
-                    <h3 className={`f19 font-black`}>ЧТО БУДЕМ ИЗУЧАТЬ</h3>
+                    <h3 className={`f19 font-black`}>ЧТО БУДЕМ ПРОХОДИТЬ:</h3>
                     <ul className={s.courseTextList}>
                       <li className={`f17 font-black ${s.courseTextItem2}`}>
                         <span className={s.courseTextIcon} />

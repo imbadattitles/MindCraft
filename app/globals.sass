@@ -132,6 +132,9 @@ input
 .bg-red
   background-color: #e93636
 
+.font-red
+  color: #e93636
+
 button
   &:hover.bg-red
     background: white
@@ -141,6 +144,9 @@ button
 
 .bg-purple
   background-color: #d036e9
+
+.font-purple
+  color: #d036e9
 
 button
   &:hover.bg-purple
@@ -373,6 +379,8 @@ button
   background-repeat: no-repeat
   background-size: contain
   background-image: url('/inputPasswordIcon.png')
+  @media screen and (max-width: 960px)
+    bottom: 6px
 
 .input60
   width: 580px
@@ -807,15 +815,22 @@ button
   border: 3px solid
   border-image: linear-gradient(90deg, black, #d036e9) 1
 
-.border-yellow
+.border-green
   border: 3px solid
-  border-image: linear-gradient(90deg, black, #fff534) 1
-
+  border-image: linear-gradient(90deg, black, #8DE936) 1
 
 
 .borderBottom-blue
   border-bottom: 3px solid #3cfdff
 
+.borderBottom-green
+  border-bottom: 3px solid #8DE936
+
+.borderBottom-red
+  border-bottom: 3px solid #e93636
+
+.borderBottom-purple
+  border-bottom: 3px solid #d036e9
 
 .shadow-blue
   box-shadow: 0px 4px 30px 0px #3CFDFF
@@ -839,9 +854,17 @@ button
 
 .shadow-purple
   box-shadow: 0px 4px 30px 0px #d036e9
+
 .coursesBg-blue
   background: #00B8BA
+.coursesBg-red
+  background: #720000
 
+.coursesBg-purple
+  background: #9b008e
+
+.coursesBg-green
+  background: #00720f
 
 .coursePic-blue
   position: absolute
@@ -859,14 +882,26 @@ button
 .FAQ_arrowRew
     transform: rotate(180deg)
 
-.coursesPhoneBg-blue
+.coursesPhoneBg
   width: 100%
   background-size: 100% auto
   background-position: center
   height: 781px
   background-repeat: no-repeat
   position: absolute
+  
+
+.coursesPhoneBg-blue
   background-image: url('/courses/bg-blue.svg')
+
+.coursesPhoneBg-red
+  background-image: url('/courses/bg-red.svg')
+
+.coursesPhoneBg-green
+  background-image: url('/courses/bg-green.svg')
+
+.coursesPhoneBg-purple
+  background-image: url('/courses/bg-purple.svg')
 
 .coursesBenefitsPhone
   bottom: -770px
@@ -882,13 +917,24 @@ button
   @media screen and (max-width: 960px)
     display: none
 
-.shape-blue
+.shape
   width: 65px
   height: 65px
-  background-image: url('/shape-blue.svg')
   position: absolute
   right: 0
   bottom: 0
+
+.shape-blue
+  background-image: url('/shape-blue.svg')
+
+.shape-red
+  background-image: url('/shape-red.svg')
+
+.shape-green
+  background-image: url('/shape-green.svg')
+
+.shape-purple
+  background-image: url('/shape-purple.svg')
 
 .selectRadioTitle
   cursor: pointer
@@ -898,7 +944,6 @@ button
   align-items: center
   height: 28px
   background: black
-  border: 1px solid #3CFDFF
   padding: 2px 10px 0px 10px
   font-family: Circe
   font-size: 13px
@@ -907,7 +952,7 @@ button
   line-height: 130%
   letter-spacing: 0.39px
 
-.form_radio-blue
+.form_radio
   z-index: 5
   position: absolute
   top: 45px
@@ -917,23 +962,22 @@ button
   width: 126px
   padding: 10px
   padding-bottom: 7px
-  border: 1px solid #3CFDFF
   background: black
   @media screen and (max-width: 960px)
     top: 28px
     @media screen and (max-width: 560px)
       top: 62px
 
-.form_radio
+.form_radio-item
   z-index: 5
   display: flex
   align-items: center
   align-content: center
 
-.form_radio input[type=radio]
+.form_radio-item input[type=radio]
   display: none
 
-.form_radio label 
+.form_radio-item label 
   z-index: 5
   display: flex
   cursor: pointer
@@ -944,20 +988,19 @@ button
   font-weight: 300
   user-select: none
 
-.form_radio label:before 
+.form_radio-item label:before 
   z-index: 5
   content: ""
   display: block
   margin-right: 6px
   width: 10px
   height: 10px
-  border: 1px solid #3CFDFF
   background: black
   border-radius: 50%
   left: 0
   transform: translateY(3px)
 
-.form_radio input[type=radio]:checked + label:before 
+.form_radio-item input[type=radio]:checked + label:before 
   background: #3CFDFF
 
 .selectRadioArrow
@@ -966,12 +1009,49 @@ button
   background: black
   background-repeat: no-repeat
   background-position: center
-  background-image: url('/courses/selectRadioArrow.svg')
   position: absolute
   right: -30px
   top: -1px
-  border: 1px solid #3CFDFF
+
+.selectRadioArrow-blue
+  background-image: url('/courses/selectRadioArrow-blue.svg')
+
+.selectRadioArrow-red
+  background-image: url('/courses/selectRadioArrow-red.svg')
+
+.selectRadioArrow-green
+  background-image: url('/courses/selectRadioArrow-green.svg')
+
+.selectRadioArrow-purple
+  background-image: url('/courses/selectRadioArrow-purple.svg')
   
+.borderRadio-blue
+  border: 1px solid #3CFDFF
+  label:before 
+    border: 1px solid #3CFDFF
+  input[type=radio]:checked + label:before 
+    background: #3CFDFF
+
+.borderRadio-red
+  border: 1px solid #e93636
+  label:before 
+    border: 1px solid #e93636
+  input[type=radio]:checked + label:before 
+    background: #e93636
+
+.borderRadio-green
+  border: 1px solid #8DE936
+  label:before 
+    border: 1px solid #8DE936
+  input[type=radio]:checked + label:before 
+    background: #8DE936
+
+.borderRadio-purple
+  border: 1px solid #d036e9
+  label:before 
+    border: 1px solid #d036e9
+  input[type=radio]:checked + label:before 
+    background: #d036e9
 
 .none
   display: none

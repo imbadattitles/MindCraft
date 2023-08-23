@@ -1,40 +1,52 @@
 import { FAQcourse } from "@/components/FAQcourse";
 import s from "../../styles/course.module.sass";
-import Link from "next/link";
 import { SignUpCurseInCurse } from "@/components/SignUpCurseInCurse";
-import { SelectRadio } from "@/components/SelectRadio";
 import { AnotherCourse } from "@/components/AnotherCourse";
 import { CourseItems } from "@/components/CourseItem";
-export default function course() {
-  const repeat = [1, 2, 3];
-  const theme = "blue";
-  const main = {
-    title: "ИНФОРМАТИКА / ПРОГРАММИРОВАНИЕ",
-    text: "Используем платформу Minecraft для обучения языкам, математике, программированию, развитию лидерских и коммуникативных навыков",
+const getPrograms = async () => {
+  const response = {
+    main: {
+      title: "ИНФОРМАТИКА / ПРОГРАММИРОВАНИЕ",
+      text: "Используем платформу Minecraft для обучения языкам, математике, программированию, развитию лидерских и коммуникативных навыков",
+    },
+    theme: "green",
+    items: [
+      {
+        name: "ОСНОВЫ ИНФОРМАТИКИ",
+        cost: { month: 1950, year: 10000 },
+        age: ["8-9", "9-10", "11-12"],
+      },
+      {
+        name: "ПРОДВИНУТАЯ ИНФОРМАТИКА",
+        cost: { month: 1950, year: 10000 },
+        age: ["11-12", "12-13", "13-14"],
+      },
+      {
+        name: "ПОДГОТОВКА К ЕГЭ",
+        cost: { month: 1950, year: 10000 },
+        age: ["11-12", "13-14"],
+      },
+      {
+        name: "ПОДГОТОВКА К ЕГЭээ",
+        cost: { month: 323, year: 1213 },
+        age: ["13-14"],
+      },
+      { name: "ПОДГОТОВКА К ЕГЭ123", cost: 12345, age: [8] },
+    ],
   };
-  const items = [
-    {
-      name: "ОСНОВЫ ИНФОРМАТИКИ",
-      cost: { month: 1950, year: 10000 },
-      age: ["8-9", "9-10", "11-12"],
-    },
-    {
-      name: "ПРОДВИНУТАЯ ИНФОРМАТИКА",
-      cost: { month: 1950, year: 10000 },
-      age: ["11-12", "12-13", "13-14"],
-    },
-    {
-      name: "ПОДГОТОВКА К ЕГЭ",
-      cost: { month: 1950, year: 10000 },
-      age: ["11-12", "13-14"],
-    },
-    {
-      name: "ПОДГОТОВКА К ЕГЭээ",
-      cost: { month: 323, year: 1213 },
-      age: ["13-14"],
-    },
-    { name: "ПОДГОТОВКА К ЕГЭ123", cost: 12345, age: [8] },
-  ];
+  return response;
+};
+export async function generateMetadata() {
+  const response = await getPrograms();
+  return {
+    title: response.main.title,
+  };
+}
+export default async function course() {
+  const response = await getPrograms();
+  const theme = response.theme;
+  const items = response.items;
+  const main = response.main;
   return (
     <div>
       <section className={s.main}>
@@ -50,7 +62,9 @@ export default function course() {
         </div>
       </section>
       <section style={{ position: "relative" }}>
-        <span className={`coursesPhoneBg-${theme} coursesBenefitsPhone`} />
+        <span
+          className={`coursesPhoneBg-${theme} coursesPhoneBg coursesBenefitsPhone`}
+        />
         <div className={`container ${s.benefits}`}>
           <div className={s.benefit}>
             <div className={s.benefitPic}>
@@ -168,10 +182,10 @@ export default function course() {
           </div>
         </div>
       </section>
-      <FAQcourse />
+      <FAQcourse theme={theme} />
       <section className={s.mainFormSec}>
         <div className="container">
-          <SignUpCurseInCurse />
+          <SignUpCurseInCurse theme={theme} />
         </div>
       </section>
       <AnotherCourse />

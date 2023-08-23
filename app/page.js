@@ -1,13 +1,16 @@
-"use client";
-
 import { SignUpCurse } from "@/components/SignUpCurse";
 import s from "../styles/mainPage.module.sass";
 import { FAQ } from "@/components/FAQ";
-import { useState } from "react";
 import { OurProgram } from "@/components/OurProgram";
 import Link from "next/link";
 
-export default function Home() {
+async function getPrograms() {
+  const response = [1, 2, 3, 4, 5];
+  return response;
+}
+
+export default async function Home() {
+  const ourProgramItems = await getPrograms();
   return (
     <div>
       <section className={s.main}>
@@ -107,7 +110,7 @@ export default function Home() {
           <div className={s.howLearnCube2} />
         </div>
       </section>
-      <OurProgram />
+      <OurProgram items={ourProgramItems} />
       <section id="preparing" className={s.preparing}>
         <span className={s.preparingBg} />
         <div className="container">

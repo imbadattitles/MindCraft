@@ -6,13 +6,12 @@ import { MySelect } from "./MySelect";
 import Link from "next/link";
 import ReactInputMask from "react-input-mask";
 
-const SignUpCurseInCurse = () => {
+const SignUpCurseInCurse = ({ theme }) => {
   const [name, setName] = useState("");
   const [mail, setMail] = useState("");
   const [phone, setPhone] = useState("");
   let phonenumber = useRef("");
   const [course, setCourse] = useState("");
-  const theme = "blue";
   return (
     <form className={s.mainForm}>
       <h4 className={`f40 font-${theme} ${s.mainForm_title}`}>

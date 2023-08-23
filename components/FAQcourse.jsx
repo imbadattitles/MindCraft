@@ -3,7 +3,7 @@
 import { useState } from "react";
 import s from "../styles/course.module.sass";
 
-const FAQcourse = () => {
+const FAQcourse = ({ theme }) => {
   const faq = [
     {
       title: "Вопрос1",
@@ -16,11 +16,12 @@ const FAQcourse = () => {
       id: 2,
     },
   ];
-  const [theme, setTheme] = useState("blue");
   const [visible, setVisible] = useState(null);
   return (
     <section className={s.FAQ}>
-      <span className={`coursesPhoneBg-${theme} coursesFAQPhone`} />
+      <span
+        className={`coursesPhoneBg-${theme} coursesPhoneBg coursesFAQPhone`}
+      />
       <div className="container">
         <span className={s.questionPic} />
         <h4 className={`f40 font-${theme} ${s.FAQTitle}`}>ОСТАЛИСЬ ВОПРОСЫ?</h4>
@@ -46,7 +47,11 @@ const FAQcourse = () => {
               >
                 {question.text}
               </h6>
-              <span className={question.id == visible ? s.FAQpic : s.none} />
+              <span
+                className={
+                  question.id == visible ? `${s.FAQpic} shape-${theme}` : s.none
+                }
+              />
             </div>
           ))}
         </div>
