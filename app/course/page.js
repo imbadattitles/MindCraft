@@ -9,7 +9,7 @@ const getPrograms = async () => {
       title: "ИНФОРМАТИКА / ПРОГРАММИРОВАНИЕ",
       text: "Используем платформу Minecraft для обучения языкам, математике, программированию, развитию лидерских и коммуникативных навыков",
     },
-    theme: "green",
+    theme: "red",
     items: [
       {
         name: "ОСНОВЫ ИНФОРМАТИКИ",
@@ -120,12 +120,12 @@ export default async function course() {
         <div className="container">
           <h4 className="f40 ourMentors_title">
             НАШИ <br />
-            <span className={`font-${theme}`}>ПРЕПОДАВАТЕЛИ</span>
+            <span className={`font-blue`}>ПРЕПОДАВАТЕЛИ</span>
           </h4>
           <div className="ourMentors_row">
             <div className="mentor">
               <div className="mentor_pic">
-                <div className={`mentor__circle circle-${theme}`}>
+                <div className={`mentor__circle circle-blue`}>
                   <img src="/mentor1.png" className="mentor_photo" />
                   <div className="mentor1_cube1" />
                 </div>
@@ -139,7 +139,7 @@ export default async function course() {
             </div>
             <div className="mentor">
               <div className="mentor_pic">
-                <div className={`mentor__circle circle-${theme}`}>
+                <div className={`mentor__circle circle-blue`}>
                   <img src="/mentor1.png" className="mentor_photo" />
                   <div className="mentor2_cube1" />
                 </div>
@@ -153,7 +153,7 @@ export default async function course() {
             </div>
             <div className="mentor">
               <div className="mentor_pic">
-                <div className={`mentor__circle circle-${theme}`}>
+                <div className={`mentor__circle circle-blue`}>
                   <img src="/mentor1.png" className="mentor_photo" />
                 </div>
                 <div className="mentor3_cube1" />
@@ -167,7 +167,7 @@ export default async function course() {
             </div>
             <div className="mentor">
               <div className="mentor_pic">
-                <div className={`mentor__circle circle-${theme}`}>
+                <div className={`mentor__circle circle-blue`}>
                   <img src="/mentor1.png" className="mentor_photo" />
                 </div>
                 <div className="mentor4_cube1" />
@@ -182,10 +182,10 @@ export default async function course() {
           </div>
         </div>
       </section>
-      <FAQcourse theme={theme} />
+      <FAQcourse theme={"blue"} />
       <section className={s.mainFormSec}>
         <div className="container">
-          <SignUpCurseInCurse theme={theme} />
+          <SignUpCurseInCurse theme={"blue"} />
         </div>
       </section>
       <AnotherCourse />
