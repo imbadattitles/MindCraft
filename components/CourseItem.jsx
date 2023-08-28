@@ -102,7 +102,9 @@ const CourseItems = ({ theme, notFiltered }) => {
                     <h3 className={`f19 font-black`}>ЧТО ВХОДИТ В КУРС:</h3>
                     <ul className={s.courseTextList}>
                       <li className={`f17 font-black ${s.courseTextItem}`}>
-                        <span className={s.courseTextIcon} />
+                        <span
+                          className={`courseTextIcon courseTextIcon-${theme}`}
+                        />
                         <h6>
                           Личные проекты от преподавателей fdgdfdfgdgf dgdfgdf
                           dgfdfdfgdgf dfgdfgdfgdf dfgdfsd sdfdssdf{" "}
@@ -134,7 +136,9 @@ const CourseItems = ({ theme, notFiltered }) => {
                     <h3 className={`f19 font-black`}>ЧТО БУДЕМ ПРОХОДИТЬ:</h3>
                     <ul className={s.courseTextList}>
                       <li className={`f17 font-black ${s.courseTextItem2}`}>
-                        <span className={s.courseTextIcon} />
+                        <span
+                          className={`courseTextIconCube courseTextIconCube-${theme}`}
+                        />
                         <h6>Алгоритмические задачи</h6>
                       </li>
                       <li className={`f17 font-black ${s.courseTextItem2}`}>
@@ -256,7 +260,9 @@ const CourseItems = ({ theme, notFiltered }) => {
                     <h3 className={`f19 font-black`}>ЧТО ВХОДИТ В КУРС:</h3>
                     <ul className={s.courseTextList}>
                       <li className={`f17 font-black ${s.courseTextItem}`}>
-                        <span className={s.courseTextIcon} />
+                        <span
+                          className={`courseTextIcon courseTextIcon-black`}
+                        />
                         <h6>
                           Личные проекты от преподавателей fdgdfdfgdgf dgdfgdf
                           dgfdfdfgdgf dfgdfgdfgdf dfgdfsd sdfdssdf{" "}
@@ -288,7 +294,9 @@ const CourseItems = ({ theme, notFiltered }) => {
                     <h3 className={`f19 font-black`}>ЧТО БУДЕМ ПРОХОДИТЬ:</h3>
                     <ul className={s.courseTextList}>
                       <li className={`f17 font-black ${s.courseTextItem2}`}>
-                        <span className={s.courseTextIcon} />
+                        <span
+                          className={`courseTextIconCube courseTextIconCube-black`}
+                        />
                         <h6>Алгоритмические задачи</h6>
                       </li>
                       <li className={`f17 font-black ${s.courseTextItem2}`}>
@@ -410,7 +418,9 @@ const CourseItems = ({ theme, notFiltered }) => {
                     <h3 className={`f19 font-${theme}`}>ЧТО ВХОДИТ В КУРС:</h3>
                     <ul className={s.courseTextList}>
                       <li className={`f17 font-black ${s.courseTextItem}`}>
-                        <span className={s.courseTextIcon} />
+                        <span
+                          className={`courseTextIcon courseTextIcon-${theme}`}
+                        />
                         <h6>
                           Личные проекты от преподавателей fdgdfdfgdgf dgdfgdf
                           dgfdfdfgdgf dfgdfgdfgdf dfgdfsd sdfdssdf{" "}
@@ -444,7 +454,9 @@ const CourseItems = ({ theme, notFiltered }) => {
                     </h3>
                     <ul className={s.courseTextList}>
                       <li className={`f17 font-black ${s.courseTextItem2}`}>
-                        <span className={s.courseTextIcon} />
+                        <span
+                          className={`courseTextIconCube courseTextIconCube-${theme}`}
+                        />
                         <h6>Алгоритмические задачи</h6>
                       </li>
                       <li className={`f17 font-black ${s.courseTextItem2}`}>
@@ -566,7 +578,9 @@ const CourseItems = ({ theme, notFiltered }) => {
                     <h3 className={`f19 font-black`}>ЧТО ВХОДИТ В КУРС:</h3>
                     <ul className={s.courseTextList}>
                       <li className={`f17 font-black ${s.courseTextItem}`}>
-                        <span className={s.courseTextIcon} />
+                        <span
+                          className={`courseTextIcon courseTextIcon-${theme}`}
+                        />
                         <h6>
                           Личные проекты от преподавателей fdgdfdfgdgf dgdfgdf
                           dgfdfdfgdgf dfgdfgdfgdf dfgdfsd sdfdssdf{" "}
@@ -598,7 +612,9 @@ const CourseItems = ({ theme, notFiltered }) => {
                     <h3 className={`f19 font-black`}>ЧТО БУДЕМ ПРОХОДИТЬ:</h3>
                     <ul className={s.courseTextList}>
                       <li className={`f17 font-black ${s.courseTextItem2}`}>
-                        <span className={s.courseTextIcon} />
+                        <span
+                          className={`courseTextIconCube courseTextIconCube-${theme}`}
+                        />
                         <h6>Алгоритмические задачи</h6>
                       </li>
                       <li className={`f17 font-black ${s.courseTextItem2}`}>
@@ -720,7 +736,9 @@ const CourseItems = ({ theme, notFiltered }) => {
                     <h3 className={`f19 font-black`}>ЧТО ВХОДИТ В КУРС:</h3>
                     <ul className={s.courseTextList}>
                       <li className={`f17 font-black ${s.courseTextItem}`}>
-                        <span className={s.courseTextIcon} />
+                        <span
+                          className={`courseTextIcon courseTextIcon-black`}
+                        />
                         <h6>
                           Личные проекты от преподавателей fdgdfdfgdgf dgdfgdf
                           dgfdfdfgdgf dfgdfgdfgdf dfgdfsd sdfdssdf{" "}
@@ -752,7 +770,9 @@ const CourseItems = ({ theme, notFiltered }) => {
                     <h3 className={`f19 font-black`}>ЧТО БУДЕМ ПРОХОДИТЬ:</h3>
                     <ul className={s.courseTextList}>
                       <li className={`f17 font-black ${s.courseTextItem2}`}>
-                        <span className={s.courseTextIcon} />
+                        <span
+                          className={`courseTextIconCube courseTextIconCube-black`}
+                        />
                         <h6>Алгоритмические задачи</h6>
                       </li>
                       <li className={`f17 font-black ${s.courseTextItem2}`}>
