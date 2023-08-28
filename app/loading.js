@@ -1,8 +1,7 @@
-import "../loader.sass";
 export default function loading() {
   return (
     <div className="loader">
-      <div className="custom-loader">esrser</div>;
+      <div className="custom-loader"></div>;
     </div>
   );
 }
