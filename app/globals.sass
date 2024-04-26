@@ -1,0 +1,1332 @@
+@import url('https://fonts.googleapis.com/css2?family=Unbounded:wght@200;300;400;500;600;700;800;900&display=swap')
+*
+  box-sizing: border-box
+  padding: 0
+  margin: 0
+
+h1, h2, h3, h4, h5, h6
+  font-weight: inherit
+
+button
+  cursor: pointer
+  transition: 0.1s
+
+html, body
+  margin: auto
+  background: #000000
+  color: white
+  overflow-x: hidden
+  scroll-behavior: smooth
+
+body 
+  position: relative
+
+main
+  position: relative
+  z-index: 1
+
+.container
+  margin: auto
+  max-width: 1360px
+  padding: 0 15px
+  position: relative
+  z-index: 2
+
+.loader
+  display: flex
+  align-items: center
+  align-content: center
+  justify-content: center
+  min-height: 100vh
+  min-width: 100vw
+  
+.custom-loader
+  width: 100px
+  height: 100px
+  border-radius: 50%
+  background: conic-gradient(#0000 10%, #F4F4F4)
+  -webkit-mask: radial-gradient(farthest-side, #0000 calc(100% - 16px), #000 0)
+  animation: s3 1s infinite linear
+
+@keyframes s3
+  to
+    transform: rotate(1turn)
+
+a
+  color: inherit
+  text-decoration: none
+
+.font-white
+  color: white
+
+.bg-white
+  background-color: white
+
+button:hover.bg-white
+  color: white
+
+.font-green
+  color: #8de936
+
+button
+  &:hover.bg-green
+    background: #ffffff
+
+  &:active.bg-green
+    background: #c0f391
+
+.bg-greenMain
+  background: #8de936
+
+button
+  &:hover.bg-greenMain
+    background: #e5e936
+
+  &:active.bg-greenMain
+    background: #c4c81c
+
+.bg-green
+  background-color: #8de936
+
+.font-black
+  color: black
+
+.bg-black
+  background-color: black
+
+button
+  &:hover.btn-black
+    background: white
+
+  &:active.btn-black
+    background: rgb(255, 255, 255), 0.5
+
+  &:hover.btn-header
+    color: #000000
+    background: #e5e936
+
+  &:active.btn-header
+    color: #000000
+    background: #c4c81c
+
+  &:hover.btn-cart
+    background: #8de936
+
+    span
+      color: #8de936
+      background: black
+
+    .btn-icon
+      width: 22px
+      height: 22px
+      background-image: url("/cartHover.svg")
+
+.font-blue
+  color: #3cfdff
+
+.bg-blue
+  background-color: #3cfdff
+
+button
+  &:hover.bg-blue
+    background: #fffcfc
+
+  &:active.bg-blue
+    background: #b7feff
+
+.font-dblue
+  color: #3632ff
+
+.bg-dblue
+  background-color: #3632ff
+
+button
+  &:hover.bg-dblue
+    background: #2e5cff
+
+  &:active.bg-dblue
+    color: #d2cfcf
+    background: #2e5cff
+
+input
+  &:hover.bg-dblue
+    background: #2e5cff
+
+  &:active.bg-dblue
+    color: #d2cfcf
+    background: #2e5cff
+
+.bg-red
+  background-color: #e93636
+
+.font-red
+  color: #e93636
+
+button
+  &:hover.bg-red
+    background: white
+
+  &:active.bg-red
+    background: #ffbaba
+
+.bg-purple
+  background-color: #d036e9
+
+.font-purple
+  color: #d036e9
+
+button
+  &:hover.bg-purple
+    background: white
+
+  &:active.bg-purple
+    background: #f3b0fe
+
+.bg-yellow
+  background-color: #fff534
+
+button
+  &:hover.bg-yellow
+    background: white
+
+  &:active.bg-yellow
+    background: #fffbb8
+
+.f96
+  display: block
+  font-family: "Unbounded"
+  font-size: 96px
+  font-weight: 500
+  line-height: 107%
+  text-transform: uppercase
+  @media screen and (max-width: 960px)
+    font-size: 36px
+
+.f12_5
+  display: block
+  font-family: "Unbounded"
+  font-size: 12.5px
+  font-style: normal
+  font-weight: 400
+  line-height: normal
+  letter-spacing: 1.625px
+  text-transform: uppercase
+
+.f13
+  font-family: 'Circe'
+  font-size: 13px
+  font-style: normal
+  font-weight: 400
+  line-height: 130%
+  letter-spacing: 0.39px
+
+.f20
+  display: block
+  font-family: "Circe"
+  font-size: 20px
+  font-style: normal
+  font-weight: 300
+  line-height: 130%
+  @media screen and (max-width: 960px)
+    font-size: 14px
+
+
+.f19
+  display: block
+  font-family: "Unbounded"
+  font-size: 19px
+  font-style: normal
+  font-weight: 600
+  line-height: 140%
+  letter-spacing: -0.19px
+  @media screen and (max-width: 960px)
+    font-size: 15px
+
+.f14
+  display: block
+  font-family: "Circe"
+  font-size: 14px
+  font-style: normal
+  font-weight: 350
+  line-height: 140%
+  @media screen and (max-width: 960px)
+    font-size: 11px
+
+.f40
+  display: block
+  font-family: "Unbounded"
+  font-size: 40px
+  font-style: normal
+  font-weight: 500
+  line-height: 160%
+  @media screen and (max-width: 960px)
+    font-size: 19px
+
+.f12_Unbounded
+  display: block
+  font-family: "Unbounded"
+  font-size: 12px
+  font-style: normal
+  font-weight: 500
+  line-height: normal
+  letter-spacing: 1.56px
+  @media screen and (max-width: 960px)
+    font-size: 10px
+    font-weight: 700
+
+.f12_circe
+  font-family: "Circe"
+  font-size: 12px
+  font-style: normal
+  font-weight: 400
+  line-height: 140%
+
+.f28
+  display: block
+  font-family: "Unbounded"
+  font-size: 28px
+  font-style: normal
+  font-weight: 500
+  line-height: 130%
+  @media screen and (max-width: 960px)
+    font-size: 16px
+
+.f23
+  font-family: Unbounded
+  font-size: 23px
+  font-style: normal
+  font-weight: 500
+  line-height: 130%
+  @media screen and (max-width: 960px)
+    font-size: 19px
+
+.f24
+  font-family: "Circe"
+  font-size: 24px
+  font-style: normal
+  font-weight: 400
+  line-height: 130%
+  @media screen and (max-width: 960px)
+    font-size: 12px
+
+.f18
+  font-family: "Circe"
+  font-size: 18px
+  font-style: normal
+  font-weight: 400
+  line-height: 140%
+
+.f64
+  font-family: Unbounded
+  font-size: 64px
+  font-style: normal
+  font-weight: 500
+  line-height: 130%
+  @media screen and (max-width: 960px)
+    font-size: 19px
+
+.table,table
+  width: 100% !important
+  text-align: left !important
+  background: black !important
+  border: 3px solid #8DE936 !important
+  border-collapse: collapse !important
+  margin-bottom: 20px !important
+  @media screen and (max-width: 960px)
+    border: 2px solid #8DE936 !important
+    width: 650px !important
+    
+
+.tableScroll
+  margin-bottom: 50px
+  @media screen and (max-width: 960px)
+    margin-bottom: 20px
+    overflow-x: scroll
+  
+
+.tableHeader,thead
+  background: #8DE936 !important
+  margin-bottom: 30px !important
+.tableHeaderTitle, th
+  color: black !important
+  font-family: 'Unbounded' !important
+  font-size: 20px !important
+  font-style: normal !important
+  font-weight: 400 !important
+  line-height: 130% !important
+  @media screen and (max-width: 960px)
+    font-size: 10px !important
+  &:first-child
+    padding: 25px 0px 25px 45px !important
+    @media screen and (max-width: 960px)
+      padding: 10px 0px 15px 25px !important
+  &:last-child
+    width: 400px !important
+    @media screen and (max-width: 960px)
+      width: 200px !important
+.tableRowText, td
+  color: white !important
+  font-family: 'Circe' !important
+  font-size: 20px !important
+  font-style: normal !important
+  font-weight: 300 !important
+  line-height: 24px !important
+  @media screen and (max-width: 960px)
+    font-size: 10px !important
+  &:first-child
+    padding: 15px 0px 25px 45px !important
+    @media screen and (max-width: 960px)
+      padding: 10px 0px 10px 25px !important
+
+
+.input60block
+  position: relative 
+  margin-bottom: 24px
+  @media screen and (max-width: 960px)
+    margin-bottom: 10px
+
+.input60title
+  color: #8DE936
+  font-family: 'Unbounded'
+  font-size: 16px
+  font-style: normal
+  font-weight: 400
+  line-height: 130%
+  margin-bottom: 8px
+  @media screen and (max-width: 960px)
+    font-size: 10px
+    
+
+.inputPasswordIcon
+  cursor: pointer
+  position: absolute
+  bottom: 12px
+  right: 16px
+  width: 38px
+  height: 38px
+  background-repeat: no-repeat
+  background-size: contain
+  background-image: url('/inputPasswordIcon.png')
+  @media screen and (max-width: 960px)
+    bottom: 6px
+
+.input60
+  width: 580px
+  padding: 20px 25px
+  border: none
+  outline: none
+  &:focus
+    border: 2px solid #8DE936
+  @media screen and (max-width: 960px)
+    width: 100%
+    padding: 15px
+
+.fake
+    width: 28px
+    height: 28px
+    position: relative
+    margin-right: 15px
+    background-repeat: no-repeat
+    @media screen and (max-width: 560px)
+        margin-right: 15px
+
+.form__checkbox
+  display: none
+
+.checkBox_blue
+  border: 3px solid #3cfdff
+
+.checkBox_dblue
+  border: 3px solid #3632FF
+
+.checkBox_green
+  border: 3px solid #8DE936
+
+.checkBox_red
+  border: 3px solid #e93636
+
+.checkBox_purple
+  border: 3px solid #d036e9
+
+.checkBox_yellow
+  border: 3px solid #fff534
+  
+.checkbox_text
+  font-family: 'Circe'
+  font-size: 24px
+  font-style: normal
+  font-weight: 400
+  line-height: 130%
+  @media screen and (max-width: 560px)
+    font-size: 11px
+
+.checkbox_text-small
+  font-family: 'Circe'
+  font-size: 16px
+  font-style: normal
+  font-weight: 400
+  line-height: 130%
+  @media screen and (max-width: 560px)
+    font-size: 11px
+        
+.label
+    cursor: pointer
+    display: flex
+    align-items: center
+    margin-bottom: 30px
+    @media screen and (max-width: 560px)
+        margin-bottom: 20px
+    
+.form__checkbox:checked + .fake:after
+    opacity: 1
+.f17
+  font-family: Circe
+  font-size: 17px
+.fake:after
+    content: ''
+    position: absolute
+    top: 2px
+    left: -3px
+    display: block
+    opacity: 0
+    width: 24px
+    height: 15px
+    z-index: 20
+    background-size: contain
+    background-image: url(/checked.svg)
+    background-repeat: no-repeat
+
+.btn-header
+  width: 126px
+  height: 48px
+  border-radius: 100px
+  color: #8de936
+  background: #000
+  text-transform: uppercase
+  border: none
+  cursor: pointer
+  @media screen and (max-width: 960px)
+    background: #8de936
+    color: #000
+.btn-cart
+  width: 71px
+  height: 48px
+  border-radius: 100px
+  color: #8de936
+  background: #000
+  position: relative
+  display: flex
+  align-items: center
+  align-content: center
+  border: none
+  cursor: pointer
+  justify-content: center
+  border: none
+  @media screen and (max-width: 960px)
+    background: #8DE936
+    color: black
+  
+
+.btn-icon
+  width: 22px
+  height: 22px
+  background-image: url("/cart.svg")
+  @media screen and (max-width: 960px)
+    background-image: url("/cartHover.svg")
+
+.btn232
+  width: 232px
+  height: 51px
+  flex-shrink: 0
+  border-radius: 100px
+  text-transform: uppercase
+  border: none
+  font-weight: 700
+  @media screen and (max-width: 960px)
+    width: 100%
+
+.btn180
+  width: 180px
+  height: 43px
+  flex-shrink: 0
+  border-radius: 86px
+  text-transform: uppercase
+  border: none
+  font-weight: 700 !important
+  @media screen and (max-width: 560px)
+    width: 155px
+    height: 38px
+.btn209
+  width: 209px
+  height: 51px
+  flex-shrink: 0
+  border-radius: 100px
+  text-transform: uppercase
+  border: none
+  font-weight: 700
+  @media screen and (max-width: 960px)
+    width: 100%
+
+.arrowBtn-big, .arrowBtn-small
+  width: 63px
+  height: 51px
+  flex-shrink: 0
+  border-radius: 100px
+  border: none
+  display: flex
+  align-items: center
+  align-content: center
+  justify-content: center
+  justify-items: center
+
+.arrowSml
+  background-image: url('/arrowSml.svg')
+  width: 28px
+  height: 18px
+  background-size: contain
+  background-repeat: no-repeat
+  @media screen and (max-width: 560px)
+    height: 14px
+
+.arrowBig
+  background-image: url('/arrowBig.svg')
+  width: 38px
+  height: 18px
+  background-size: contain
+  background-repeat: no-repeat
+  @media screen and (max-width: 560px)
+    height: 14px
+  
+
+
+.arrowBtn-big
+  width: 75px
+  height: 43px
+  flex-shrink: 0
+  border-radius: 100px
+  @media screen and (max-width: 560px)
+    height: 38px
+    width: 65px
+
+.titleTextPos
+  max-width: 474px
+  margin-bottom: 30px
+  @media screen and (max-width: 960px)
+    margin-bottom: 20px
+
+
+.benefitText
+  display: block
+  max-width: 259px
+  margin-top: 16px
+  @media screen and (max-width: 960px)
+    max-width: 180px
+
+.ourMentors
+  margin-bottom: 140px
+  @media screen and (max-width: 560px)
+    margin-bottom: 50px
+
+  
+
+.ourMentors_title
+  margin-bottom: 50px
+  @media screen and (max-width: 560px)
+    margin-bottom: 10px
+
+.ourMentors_row
+  display: flex
+  justify-content: space-between
+  flex-wrap: wrap
+  gap: 20px
+  @media screen and (max-width: 960px)
+    justify-content: space-around
+
+.mentor_pic
+  width: 202px
+  height: 202px
+  position: relative
+  margin-bottom: 20px
+  @media screen and (max-width: 560px)
+    width: 150px
+    height: 150px
+    margin-bottom: 11px
+
+.mentor__circle
+  position: relative
+  width: 202px
+  height: 202px
+  border-radius: 50%
+  overflow: hidden
+  z-index: 2
+  @media screen and (max-width: 560px)
+    width: 150px
+    height: 150px
+.circle-dblue
+  background-color: #06038a
+.circle-blue
+  background-color: #3cfdff
+.circle-green
+  background-color: #8DE936
+.circle-yellow
+  background-color: #fff534
+.circle-red
+  background-color: #e93636
+.circle-purple
+  background-color: #d036e9
+
+
+.mentor_photo
+  position: absolute
+  bottom: 0
+  width: 100%
+  height: 100%
+  background-size: contain
+  background-repeat: no-repeat
+  left: 50%
+  transform: translateX(-50%)
+  z-index: 4
+  @media screen and (max-width: 560px)
+    width: 150px
+    height: 150px
+
+
+.mentor_name, .mentor_type
+  margin-bottom: 10px
+
+.mentor_text
+  max-width: 240px
+  @media screen and (max-width: 560px)
+    max-width: 220px
+
+.mentor1_cube1
+  width: 81px
+  height: 89px
+  position: absolute
+  bottom: 20px
+  left: 0
+  background-repeat: no-repeat
+  background-image: url("/mainPage/mentor1_cube1.png")
+  animation: cube1 10s infinite ease
+  animation-delay: 1.4s
+  @media screen and (max-width: 560px)
+    background-size: contain
+    height: 65px
+
+.mentor1_cube2
+  width: 89px
+  height: 116px
+  position: absolute
+  top: -10px
+  right: -30px
+  z-index: 5
+  background-repeat: no-repeat
+  background-image: url("/mainPage/mentor1_cube2.png")
+  animation: cube1 8s infinite ease
+  animation-delay: .3s
+  @media screen and (max-width: 560px)
+    background-size: contain
+    height: 85px
+
+.mentor2_cube1
+  width: 122px
+  height: 126px
+  position: absolute
+  bottom: 27px
+  right: -10px
+  background-repeat: no-repeat
+  background-image: url("/mainPage/mentor2_cube1.png")
+  animation: cube1 9s infinite ease
+  animation-delay: .6s
+  @media screen and (max-width: 560px)
+    background-size: contain
+    height: 92px
+    right: -40px
+
+.mentor2_cube2
+  width: 61px
+  height: 79px
+  position: absolute
+  bottom: 43px
+  left: -30px
+  z-index: 5
+  background-repeat: no-repeat
+  background-image: url("/mainPage/mentor2_cube2.png")
+  animation: cube1 7s infinite ease
+  animation-delay: .9s
+  @media screen and (max-width: 560px)
+    background-size: contain
+    height: 57px
+    left: -20px
+
+.mentor3_cube1
+  width: 130px
+  height: 126px
+  position: absolute
+  top: 30px
+  left: -64px
+  z-index: 5
+  background-repeat: no-repeat
+  background-image: url("/mainPage/mentor3_cube1.png")
+  animation: cube1 7s infinite ease
+  animation-delay: .1s
+  @media screen and (max-width: 560px)
+    background-size: contain
+    height: 92px
+    left: -50px
+
+.mentor3_cube2
+  width: 61px
+  height: 79px
+  position: absolute
+  bottom: 5px
+  right: -14px
+  z-index: 5
+  background-repeat: no-repeat
+  background-image: url("/mainPage/mentor3_cube2.png")
+  animation: cube1 12s infinite ease
+  animation-delay: 1s
+  @media screen and (max-width: 560px)
+    background-size: contain
+    height: 58px
+    right: -30px
+
+.mentor4_cube1
+  width: 130px
+  height: 126px
+  position: absolute
+  top: 30px
+  left: -64px
+  background-repeat: no-repeat
+  background-image: url("/mainPage/mentor4_cube1.png")
+  animation: cube1 5s infinite ease
+  animation-delay: .5s
+  @media screen and (max-width: 560px)
+    background-size: contain
+    height: 92px
+    z-index: 5
+    left: -50px
+
+.mentor4_cube2
+  width: 61px
+  height: 79px
+  position: absolute
+  top: -6px
+  right: -14px
+  z-index: 5
+  background-repeat: no-repeat
+  background-image: url("/mainPage/mentor4_cube2.png")
+  animation: cube1 7s infinite ease
+  animation-delay: .2s
+  @media screen and (max-width: 560px)
+    background-size: contain
+    height: 58px
+
+@keyframes cube1
+    0%
+        transform: translateY(0)
+    50%
+        transform: translateY(-30px)
+    100%
+        transform: translateY(0)
+
+.border-blue
+  border: 3px solid
+  border-image: linear-gradient(90deg, black, #3cfdff) 1
+
+.border-dblue
+  border: 3px solid
+  border-image: linear-gradient(90deg, black, #3632ff) 1
+
+.border-red
+  border: 3px solid
+  border-image: linear-gradient(90deg, black, #e93636) 1
+
+.border-purple
+  border: 3px solid
+  border-image: linear-gradient(90deg, black, #d036e9) 1
+
+.border-green
+  border: 3px solid
+  border-image: linear-gradient(90deg, black, #8DE936) 1
+
+
+.borderBottom-blue
+  border-bottom: 3px solid #3cfdff
+
+.borderBottom-green
+  border-bottom: 3px solid #8DE936
+
+.borderBottom-red
+  border-bottom: 3px solid #e93636
+
+.borderBottom-purple
+  border-bottom: 3px solid #d036e9
+
+.shadow-blue
+  box-shadow: 0px 4px 30px 0px #3CFDFF
+
+.shadow-dblue
+  box-shadow: 0px 4px 30px 0px #3632ff
+
+.shadow-green
+  box-shadow: 0px 4px 30px 0px #8DE936
+
+.shadow-green_main
+  box-shadow: 0px 4px 30px 0px #8DE936
+  &:hover
+    box-shadow: 0px 4px 30px 0px #fff534
+
+.shadow-red
+  box-shadow: 0px 4px 30px 0px #e93636
+
+.shadow-yellow
+  box-shadow: 0px 4px 30px 0px #fff534
+
+.shadow-purple
+  box-shadow: 0px 4px 30px 0px #d036e9
+
+.coursesBg-blue
+  background: #00B8BA
+.coursesBg-red
+  background: #720000
+
+.coursesBg-purple
+  background: #9b008e
+
+.coursesBg-green
+  background: #00720f
+
+.coursePic-blue
+  position: absolute
+
+.FAQ_arrow-blue
+    width: 27px
+    height: 15px
+    background-repeat: no-repeat
+    background-image: url(/courses/FAQarrow-blue.svg)
+    @media screen and (max-width: 560px)
+        background-size: contain
+        height: 12px
+        width: 21px
+
+.FAQ_arrowRew
+    transform: rotate(180deg)
+
+.coursesPhoneBg
+  width: 100%
+  background-size: 100% auto
+  background-position: center
+  height: 781px
+  background-repeat: no-repeat
+  position: absolute
+  
+
+.coursesPhoneBg-blue
+  background-image: url('/courses/bg-blue.svg')
+
+.coursesPhoneBg-red
+  background-image: url('/courses/bg-red.svg')
+
+.coursesPhoneBg-green
+  background-image: url('/courses/bg-green.svg')
+
+.coursesPhoneBg-purple
+  background-image: url('/courses/bg-purple.svg')
+
+.coursesBenefitsPhone
+  bottom: -770px
+  z-index: 0
+  left: 0
+  @media screen and (max-width: 960px)
+    display: none
+
+.coursesFAQPhone
+  bottom: -110px
+  z-index: 0
+  left: 0
+  @media screen and (max-width: 960px)
+    display: none
+
+.shape
+  width: 65px
+  height: 65px
+  position: absolute
+  right: 0
+  bottom: 0
+  
+
+.shape-blue
+  background-image: url('/shape-blue.svg')
+
+.shape-red
+  background-image: url('/shape-red.svg')
+  filter: grayscale(1)
+  width: 65px
+  height: 65px
+
+.shapered
+  position: absolute
+  top: 0
+  width: 65px
+  height: 65px
+  background-image: url('/shape-red.svg')
+  background: black
+
+.shape-green
+  background-image: url('/shape-green.svg')
+
+.shape-purple
+  background-image: url('/shape-purple.svg')
+
+.selectRadioTitle
+  cursor: pointer
+  position: relative
+  width: 126px
+  display: flex
+  align-items: center
+  height: 28px
+  background: black
+  padding: 2px 10px 0px 10px
+  font-family: Circe
+  font-size: 13px
+  font-style: normal
+  font-weight: 300
+  line-height: 130%
+  letter-spacing: 0.39px
+
+.form_radio
+  z-index: 5
+  position: absolute
+  top: 45px
+  display: flex
+  flex-direction: column
+  gap: 5px
+  width: 126px
+  padding: 10px
+  padding-bottom: 7px
+  background: black
+  @media screen and (max-width: 960px)
+    top: 28px
+    @media screen and (max-width: 560px)
+      top: 62px
+
+.form_radio-item
+  z-index: 5
+  display: flex
+  align-items: center
+  align-content: center
+
+.form_radio-item input[type=radio]
+  display: none
+
+.form_radio-item label 
+  z-index: 5
+  display: flex
+  cursor: pointer
+  position: relative
+  font-family: Circe
+  font-size: 15px
+  font-style: normal
+  font-weight: 300
+  user-select: none
+
+.form_radio-item label:before 
+  z-index: 5
+  content: ""
+  display: block
+  margin-right: 6px
+  width: 10px
+  height: 10px
+  background: black
+  border-radius: 50%
+  left: 0
+  transform: translateY(3px)
+
+.form_radio-item input[type=radio]:checked + label:before 
+  background: #3CFDFF
+
+.selectRadioArrow
+  height: 28px
+  width: 30px
+  background: black
+  background-repeat: no-repeat
+  background-position: center
+  position: absolute
+  right: -30px
+  top: -1px
+
+.selectRadioArrow-blue
+  background-image: url('/courses/selectRadioArrow-blue.svg')
+
+.selectRadioArrow-red
+  background-image: url('/courses/selectRadioArrow-red.svg')
+
+.selectRadioArrow-green
+  background-image: url('/courses/selectRadioArrow-green.svg')
+
+.selectRadioArrow-purple
+  background-image: url('/courses/selectRadioArrow-purple.svg')
+  
+.borderRadio-blue
+  border: 1px solid #3CFDFF
+  label:before 
+    border: 1px solid #3CFDFF
+  input[type=radio]:checked + label:before 
+    background: #3CFDFF
+
+.borderRadio-red
+  border: 1px solid #e93636
+  label:before 
+    border: 1px solid #e93636
+  input[type=radio]:checked + label:before 
+    background: #e93636
+
+.borderRadio-green
+  border: 1px solid #8DE936
+  label:before 
+    border: 1px solid #8DE936
+  input[type=radio]:checked + label:before 
+    background: #8DE936
+
+.borderRadio-purple
+  border: 1px solid #d036e9
+  label:before 
+    border: 1px solid #d036e9
+  input[type=radio]:checked + label:before 
+    background: #d036e9
+
+.none
+  display: none
+
+#ourProgram, #anotherCourses
+  [class^="swiper-button-"]::after
+    content: ''
+
+
+.swiper-button-next
+  width: 21px
+  height: 39px
+  background-image: url('/sliderNext.svg')
+  background-repeat: no-repeat
+  background-size: contain
+  transform: translateX(-10px)
+  @media screen and (max-width: 560px)
+    height: 34px !important
+  &:hover
+    transform: translateX(-10px) scale(1.2)
+  &:active
+    opacity: .7
+
+.swiper-button-prev
+  width: 21px
+  height: 39px
+  background-image: url('/sliderPrev.svg')
+  background-repeat: no-repeat
+  background-size: contain
+  transform: translateX(0px)
+  @media screen and (max-width: 560px)
+    height: 34px !important
+    transform: translate(-10px)
+  &:hover
+    transform: translateX(0px) scale(1.2)
+  &:active
+    opacity: .7
+
+.swiper-button-disabled
+  opacity: 0 !important
+
+.borderBtn-blue
+  border: 1px solid #3CFDFF
+
+.borderBtn-black
+  border: 1px solid #000000
+
+.borderBtn-green
+  border: 1px solid #8DE936
+
+.borderBtn-red
+  border: 1px solid #e93636
+
+.borderBtn-purple
+  border: 1px solid #d036e9
+
+
+
+.courseTextIcon
+    margin-right: 5px
+    min-width: 15px
+    min-height: 15px
+    background-repeat: no-repeat
+    background-size: contain
+    transform: translateY(3px)
+    @media screen and (max-width: 960px)
+        min-width: 10px
+        min-height: 10px
+
+.courseTextIcon-blue
+    background-image: url('/courses/courseTextIcon-blue.svg')
+
+.courseTextIcon-red
+    background-image: url('/courses/courseTextIcon-red.svg')
+
+.courseTextIcon-green
+    background-image: url('/courses/courseTextIcon-green.svg')
+
+.courseTextIcon-purple
+    background-image: url('/courses/courseTextIcon-purple.svg')
+
+.courseTextIcon-black
+    background-image: url('/courses/courseTextIcon-black.svg')
+
+.courseTextIconCube
+    margin-right: 10px
+    min-width: 5px
+    min-height: 5px
+    background-repeat: no-repeat
+    background-size: contain
+    transform: translateY(7px)
+
+.courseTextIconCube-blue
+    background-image: url('/courses/courseTextIconCube-blue.svg')
+
+.courseTextIconCube-red
+    background-image: url('/courses/courseTextIconCube-red.svg')
+
+.courseTextIconCube-green
+    background-image: url('/courses/courseTextIconCube-green.svg')
+
+.courseTextIconCube-purple
+    background-image: url('/courses/courseTextIconCube-purple.svg')
+
+.courseTextIconCube-black
+    background-image: url('/courses/courseTextIconCube-black.svg')
+
+
+
+.selectCountryMb20
+  bottom: 20px
+  @media screen and (max-width: 960px)
+    bottom: 15px
+    @media screen and (max-width: 560px)
+      bottom: 15px
+.selectCountry 
+  position: absolute
+  bottom: 33px
+  z-index: 1
+  width: 100px
+  @media screen and (max-width: 960px)
+    bottom: 25px
+    @media screen and (max-width: 560px)
+      bottom: 15px
+  .selectCountryArrow 
+    width: 21px
+    height: 12px
+    background-image: url('/country/arrow.svg')
+    @media screen and (max-width: 560px)
+      width: 15px
+      height: 9px
+      background-size: contain
+      background-repeat: no-repeat
+  p
+    color: black
+    font-family: Circe
+    font-size: 24px
+    font-style: normal
+    font-weight: 400
+    line-height: 130%
+    @media screen and (max-width: 960px)
+      font-size: 16px
+  .svg
+    width: 40px
+    height: 30px
+    object-fit: cover
+    border: 1px solid grey
+    @media screen and (max-width: 960px)
+      width: 20px
+      height: 15px
+  .selectCountryTop
+    cursor: pointer
+    padding-left: 20px
+    display: flex
+    align-items: center
+    gap: 15px
+    @media screen and (max-width: 560px)
+      padding-left: 15px
+  .countryList
+    position: absolute
+    top: 63px
+    height: 150px
+    overflow-y: auto
+    padding: 25px
+    display: flex
+    flex-direction: column
+    gap: 10px
+    background: white
+    outline: 3px solid #8EE937
+    width: 500px
+    @media screen and (max-width: 960px)
+      width: 300px
+      padding: 15px
+      top: 43px
+      @media screen and (max-width: 560px)
+        top: 33px
+        width: 250px
+    .countryList-item
+      cursor: pointer
+      display: grid
+      grid-template-columns: 40px 70px auto
+      gap: 20px
+      @media screen and (max-width: 960px)
+        grid-template-columns: 20px 50px auto
+        gap: 15px
+      &:focus, &:hover
+        opacity: .7
+        
+      
+
+.phoneInput
+  padding-left: 120px !important
+  @media screen and (max-width: 960px)
+    padding-left: 90px !important
+
+.dfsdfds
+  .selectCountry
+    bottom: 19px
+    .countryList
+      top: 53px
+      @media screen and (max-width: 960px) 
+        top: 38px
+
+.anim1
+  animation: cube1 4s infinite ease
+
+.anim2
+  animation: cube1 7s infinite ease
+        
+@keyframes cube1
+    0%
+        transform: translateY(0)
+    50%
+        transform: translateY(-30px)
+    100%
+        transform: translateY(0)
+
+.nonActiveBtn
+  text-decoration: line-through
+  cursor: not-allowed
+  opacity: .7
+  position: relative
+  &:hover
+    .textOnHover
+      display: block
+      position: absolute
+      left: 300px
+      width: 250px
+      bottom: 20px
+      text-transform: uppercase
+.textOnHover 
+  display: none
+
+#amobutton
+  display: flex !important

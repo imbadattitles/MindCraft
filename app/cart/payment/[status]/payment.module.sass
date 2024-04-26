@@ -1,0 +1,168 @@
+.bg 
+    background: black
+    display: flex
+    justify-content: center
+    align-items: center
+    position: relative
+    z-index: 1000
+    width: 100vw
+    height: 100vh
+    padding: 20px
+
+.modalGreen
+    background: #8DE837
+    padding: 70px 20px 65px 50px
+    position: relative
+    width: 660px
+    display: flex
+    flex-direction: column
+    align-items: flex-start
+    @media screen and (max-width: 560px) 
+        padding: 70px 20px 65px 35px
+
+.modalPink
+    background: #FFC5F4
+    padding: 70px 20px 65px 50px
+    position: relative
+    width: 660px
+    display: flex
+    flex-direction: column
+    align-items: flex-start
+    @media screen and (max-width: 560px) 
+        padding: 70px 20px 65px 35px
+
+.title
+    color: black
+    font-family: Unbounded
+    font-size: 35px
+    font-style: normal
+    font-weight: 500
+    line-height: 140%
+    margin-bottom: 20px
+    span
+        color: white
+    @media screen and (max-width: 560px)
+        font-size: 24px
+        max-width: 230px
+
+.text
+    color: black
+    font-family: Circe
+    font-size: 24px
+    font-style: normal
+    font-weight: 400
+    line-height: 120%
+    max-width: 390px
+    @media screen and (max-width: 560px) 
+        font-size: 15px
+        max-width: 160px
+
+.btn
+    margin-top: 30px
+    text-align: center
+    font-family: Unbounded
+    font-size: 12px
+    font-style: normal
+    font-weight: 500
+    line-height: normal
+    letter-spacing: 1.56px
+    padding: 15px 25px
+    line-height: 120%
+    border-radius: 100px
+    background: black
+    color: white
+    border: none
+    text-transform: uppercase
+    &:hover
+        opacity: .8
+    @media screen and (max-width: 560px) 
+        padding: 15px 20px
+
+.shape
+    position: absolute
+    right: 0
+    bottom: 0
+    width: 65px
+    height: 65px
+    z-index: 1
+    @media screen and (max-width: 560px) 
+        width: 32px
+        height: 32px
+
+.firstPng
+    width: 170px
+    height: 136px
+    position: absolute
+    z-index: 2
+    top: -20px
+    left: -30px
+    @media screen and (max-width: 560px) 
+        height: 90px
+        object-fit: contain
+        left: -50px
+
+.secondPng
+    width: 192px
+    height: 170px
+    position: absolute
+    z-index: 2
+    top: -44px
+    right: -53px
+    @media screen and (max-width: 560px) 
+        object-fit: contain
+        height: 110px
+        right: -65px
+        top: -30px
+
+.thirdPng
+    width: 163px
+    height: 130px
+    position: absolute
+    z-index: 2
+    bottom: -46px
+    right: 0
+    @media screen and (max-width: 560px) 
+        object-fit: contain
+        height: 90px
+        right: -40px
+        bottom: -20px
+
+.firstPng2
+    width: 180px
+    height: 150px
+    position: absolute
+    z-index: 2
+    top: -44px
+    left: -33px
+    @media screen and (max-width: 560px) 
+        height: 90px
+        object-fit: contain
+        left: -50px
+        top: -20px
+
+
+.secondPng2
+    width: 90px
+    height: 74px
+    position: absolute
+    z-index: 2
+    right: 20px
+    top: -24px
+    @media screen and (max-width: 560px) 
+        object-fit: contain
+        height: 50px
+        right: 10px
+        top: -10px
+
+.thirdPng2
+    width: 200px
+    height: 113px
+    position: absolute
+    z-index: 2
+    right: 38px
+    bottom: -44px
+    @media screen and (max-width: 560px) 
+        object-fit: contain
+        height: 75px
+        right: 0px
+        bottom: -30px

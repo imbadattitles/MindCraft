@@ -1,0 +1,448 @@
+.title
+    display: flex
+    align-items: center
+    @media screen and (max-width: 960px)
+        width: 100%
+.cartPic
+    margin-left: 5px
+    width: 140px
+    height: 90px
+    background-repeat: no-repeat
+    background-image: url('/cart/cartPic.png')
+    @media screen and (max-width: 960px)
+        background-size: contain
+        height: 60px
+        width: 90px
+
+.cartRows
+    margin-bottom: 60px
+
+.itemRow
+    display: grid
+    align-items: center
+    max-width: 1200px
+    grid-template-columns: 20px 260px 170px 90px 90px
+    justify-content: space-between
+    margin-bottom: 60px
+    @media screen and (max-width: 960px)
+        display: flex
+        gap: 20px
+        flex-wrap: wrap
+        border-bottom: dotted 1px #236669
+        padding-bottom: 20px
+        margin-bottom: 20px
+        &:last-child
+            border: none
+        @media screen and (max-width: 560px)
+            display: grid
+            grid-template-columns: 100px 100px auto
+            grid-template-rows: auto auto auto
+            justify-content: flex-start
+            align-items: flex-start
+            gap: 10px
+            
+
+.photoCircle
+    width: 90px
+    height: 90px
+    border: 3px solid #8DE936
+    background: black
+    border-radius: 50%
+    overflow: visible
+    position: relative
+    @media screen and (max-width: 560px)
+        grid-row: span 3
+    
+
+.itemPhoto
+    position: absolute
+    width: 100%
+    height: 100%
+
+.itemName
+    width: 260px
+    font-family: 'Unbounded'
+    font-size: 24px
+    font-style: normal
+    font-weight: 400
+    line-height: normal
+    @media screen and (max-width: 960px)
+        font-size: 13px
+        @media screen and (max-width: 560px)
+            grid-column-start: 2
+            width: 100%
+
+.priceRow
+    display: flex
+    align-items: center
+    gap: 10px
+    position: relative
+    @media screen and (max-width: 560px)
+            grid-column-start: 2
+            align-items: flex-start
+            align-content: flex-start
+            margin-top: 20px
+
+.valutePic
+    width: 26px
+    height: 29px
+    background-repeat: no-repeat
+    background-image: url('/cart/valutePic.png')
+    @media screen and (max-width: 960px)
+        background-size: contain
+        width: 13px
+        height: 15px
+
+.oldPrice
+    font-family: 'Unbounded'
+    font-size: 24px
+    font-style: normal
+    font-weight: 500
+    line-height: 130% 
+    text-decoration-line: line-through
+    @media screen and (max-width: 960px)
+        font-size: 13px
+
+.NewPrice
+    font-family: 'Unbounded'
+    font-size: 24px
+    font-style: normal
+    font-weight: 500
+    line-height: 130% 
+    position: absolute
+    top: -40px
+    left: 30px
+    @media screen and (max-width: 1200px)
+        white-space: nowrap
+        top: -25px
+        right: 0px
+        left: auto
+        @media screen and (max-width: 960px)
+            font-size: 13px
+            left: 20px
+            top: -20px
+
+
+.price
+    font-family: 'Unbounded'
+    font-size: 24px
+    font-style: normal
+    font-weight: 500
+    line-height: 130% 
+    @media screen and (max-width: 960px)
+        font-size: 13px
+        margin-bottom: -10px
+
+.counterRow
+    display: flex
+    align-items: center
+    gap: 12px
+    @media screen and (max-width: 960px)
+        @media screen and (max-width: 560px)
+            grid-column-start: 2
+        
+
+.counterLeft
+    cursor: pointer
+    width: 20px
+    height: 52px
+    background-repeat: no-repeat
+    background-position: center
+    background-size: contain
+    background-image: url('/cart/counterLeft.svg')
+    &:active
+        transform: scale(1.2)
+
+.counterRight
+    cursor: pointer
+    width: 19px
+    height: 52px
+    background-position: center
+    background-size: contain
+    background-repeat: no-repeat
+    background-image: url('/cart/counterRight.svg') 
+    &:active
+        transform: scale(1.2) 
+
+.counter
+    pointer-events: none
+    width: 70px
+    height: 40px
+    padding: 5px 10px
+    font-family: 'Circe'
+    font-size: 20px
+    font-style: normal
+    font-weight: 400
+    background: black
+    border: 3px solid #8DE936
+    @media screen and (max-width: 960px)
+        font-size: 13px
+        height: 100%
+
+.delete
+    cursor: pointer
+    font-family: 'Circe'
+    font-size: 20px
+    font-style: normal
+    font-weight: 400
+    line-height: 130%
+    text-decoration-line: underline
+    @media screen and (max-width: 960px)
+        font-size: 13px
+        @media screen and (max-width: 560px)
+            grid-column-start: 3
+            grid-row-start: 1
+            margin-left: 50px
+
+.resultSum
+    font-family: Unbounded
+    font-size: 36px
+    font-style: normal
+    font-weight: 250
+    line-height: 130%
+    margin-bottom: 25px
+    @media screen and (max-width: 960px)
+        font-size: 16px
+
+
+.cartGoBtn
+    margin-bottom: 230px
+
+.titleRow
+    margin-top: 220px
+    margin-bottom: 50px
+    display: flex
+    align-items: center
+    justify-content: space-between
+    max-width: 1200px
+    @media screen and (max-width: 960px)
+        margin-top: 100px
+        margin-bottom: 20px
+        flex-wrap: wrap
+        gap: 20px
+
+.login
+    display: flex
+    align-items: center
+    gap: 15px
+    @media screen and (max-width: 960px)
+        justify-content: space-between
+        width: 100%
+
+.loginText
+    font-family: 'Circe'
+    font-size: 24px
+    font-style: normal
+    font-weight: 300
+    line-height: 130%
+    @media screen and (max-width: 960px)
+        font-size: 16px
+
+.loginBtn
+    border-radius: 100px
+    padding: 18px 40px
+    border: none
+
+.orderRow
+    display: flex
+    max-width: 1200px
+    justify-content: space-between
+    flex-wrap: wrap
+    gap: 0px
+    margin-bottom: 100px
+
+.orderInfo
+    width: 460px
+    @media screen and (max-width: 960px)
+        width: 100%
+        margin-bottom: 30px
+
+.orderInfoRow
+    display: flex
+    width: 100%
+    align-items: center
+    margin-bottom: 20px
+    @media screen and (max-width: 960px)
+        flex-wrap: wrap
+        gap: 10px
+
+.orderInfoPic
+    width: 83px
+    height: 83px
+    margin-right: 10px
+    @media screen and (max-width: 960px)
+        width: 50px
+        height: 50px
+
+.orderInfoImg
+    height: 100%
+    width: 100%
+    object-fit: contain
+    
+
+.orderInfoName
+    width: 180px
+    font-family: 'Unbounded'
+    font-size: 16px
+    font-style: normal
+    font-weight: 400
+    line-height: normal
+    margin-right: 10px
+    @media screen and (max-width: 960px)
+        font-size: 13px
+        width: 140px
+
+.orderInfoCost
+    display: flex
+    align-items: center
+
+.orderInfoValute
+    width: 20px
+    height: 20px
+    background-size: contain
+    background-repeat: no-repeat
+    margin-right: 5px
+    background-image: url('/cart/valuteMin.png')
+    @media screen and (max-width: 960px)
+        width: 15px
+        height: 15px
+    
+.orderInfoCost
+    font-family: 'Unbounded'
+    font-size: 16px
+    font-style: normal
+    font-weight: 500
+    line-height: 160%
+    margin-right: 20px
+    @media screen and (max-width: 960px)
+        font-size: 13px
+
+.orderInfoCount
+    font-size: 14px
+    color: grey
+    @media screen and (max-width: 960px)
+        font-size: 13px
+
+.orderInfoResult
+    font-family: 'Unbounded'
+    font-size: 24px
+    font-style: normal
+    font-weight: 250
+    line-height: 160%
+    margin-bottom: 30px
+    @media screen and (max-width: 960px)
+        font-size: 18px
+        margin-bottom: 15px
+
+.back
+    cursor: pointer
+    display: flex
+    align-items: center
+    gap: 10px
+
+.backArrow
+    width: 30px
+    height: 9px
+    background-size: contain
+    background-repeat: no-repeat
+    background-image: url('/cart/arrow.svg')
+
+.backText
+    font-family: 'Circe'
+    font-size: 20px
+    font-style: normal
+    font-weight: 400
+    line-height: 130%
+    text-decoration: underline
+    @media screen and (max-width: 960px)
+        font-size: 14px
+    &:hover
+        color: silver
+
+.orderForm
+    position: relative
+    padding: 60px 60px 70px 70px
+    @media screen and (max-width: 960px)
+        padding: 40px 10px 60px 10px
+
+.error 
+    position: absolute
+    bottom: -20px
+    left: 70px
+    font-size: 14px
+    color: white
+    font-family: 'Unbounded'
+
+.typeInput
+    margin-top: 40px
+    font-family: 'Unbounded'
+    font-size: 28px
+    font-style: normal
+    font-weight: 400
+    line-height: 130%
+    margin-bottom: 15px
+    @media screen and (max-width: 960px)
+        font-size: 16px
+        margin-bottom: 8px
+
+.leftBg
+    width: 49px
+    height: calc( 100% - 23px)
+    position: absolute
+    left: 0
+    top: 0
+    background-image: url('/cart/leftBg.png')
+    @media screen and (max-width: 960px)
+        background-size: contain
+        width: 34px
+        left: -28px
+
+.rightBg
+    width: 49px
+    height: calc( 100% - 23px)
+    position: absolute
+    right: 0
+    top: 0
+    background-image: url('/cart/leftBg.png')
+    @media screen and (max-width: 960px)
+        background-size: contain
+        width: 34px
+        right: -28px
+
+.topBg
+    width: 620px
+    height: 48px
+    background-image: url('/cart/topBg.png')
+    position: absolute
+    background-repeat: no-repeat
+    top: 0
+    left: 45px
+    @media screen and (max-width: 960px)
+        background-size: auto 100%
+        height: 34px
+        left: 8px
+        width: 97%
+        top: -5px
+        @media screen and (max-width: 360px)
+            width: 94%
+            left: 12px
+
+        
+
+.bottomBg
+    width: 620px
+    height: 48px
+    background-image: url('/cart/topBg.png')
+    position: absolute
+    background-repeat: no-repeat
+    bottom: 0
+    left: 45px
+    @media screen and (max-width: 960px)
+        background-size: auto 100%
+        height: 34px
+        left: 4px
+        width: 97%
+        bottom: 10px
+        @media screen and (max-width: 360px)
+            width: 94%
+            left: 8px

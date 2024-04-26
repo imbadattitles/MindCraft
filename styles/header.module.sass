@@ -1,0 +1,262 @@
+.headerLinkList 
+    display: none
+
+.header
+    display: flex 
+    justify-content: space-between
+    align-items: center
+    transform: translateY(55px)
+    height: 0px
+    position: relative
+    z-index: 100
+    @media screen and (max-width: 1200px)
+        display: none
+    ul
+        display: flex
+        justify-content: space-between
+        width: 940px
+        li 
+            text-decoration: none
+            list-style: none
+            position: relative
+            a
+                display: flex
+                align-items: center
+                gap: 10px
+                span 
+                    display: block
+                    width: 15px
+                    height: 9px
+                    background-size: contain
+                    background-repeat: no-repeat
+                    background-image: url('/headerArrow.svg')
+                
+            &:hover
+                color: #8DE937
+                text-decoration: underline
+                span
+                    transform: rotate(180deg)
+                .headerLinkList
+                    display: flex
+                    flex-direction: column
+                    gap: 10px
+                    position: absolute
+                    top: 15px
+                    left: -10px
+                    background: black
+                    padding: 20px 10px
+                    a
+                        &:hover
+                            text-decoration: underline
+            &:active
+                color: #5EB00F
+.headerBtns 
+    span 
+        position: absolute
+        left: -7px
+        top: -4px
+        text-align: center
+        font-family: Unbounded
+        font-size: 10px
+        font-style: normal
+        font-weight: 500
+        line-height: normal
+        letter-spacing: 130%
+        width: 23px
+        height: 23px
+        border-radius: 100%
+        display: flex
+        align-content: center
+        align-items: center
+        justify-content: center
+
+.headerBtns
+    display: flex
+    gap: 10px
+    @media screen and (max-width: 1200px)
+        position: absolute
+        left: 50%
+        bottom: 40px
+        transform: translateX(-50%)
+    
+
+.headerMobile
+    display: none
+    z-index: 100
+    @media screen and (max-width: 1200px)
+        display: block
+        z-index: 100 !important
+    li 
+        text-decoration: none
+        list-style: none
+        text-align: center
+        margin-bottom: 6vh
+        font-family: Unbounded
+    .headerBtns
+        span 
+            position: absolute
+            left: -7px
+            top: -4px
+            text-align: center
+            font-family: Unbounded
+            font-size: 10px
+            font-style: normal
+            font-weight: 500
+            line-height: normal
+            letter-spacing: 130%
+            width: 23px
+            height: 23px
+            border-radius: 100%
+            display: flex
+            align-content: center
+            align-items: center
+            justify-content: center
+        
+
+.logoMobile
+    position: absolute
+    left: 20px
+    top: 20px
+
+.burger
+    position: absolute
+    right: 20px
+    top: 24px
+    width: 30px
+    height: 23px
+    background: none
+    background-image: url('/burger.svg')
+    border: none
+    background-size: contain
+
+.mobileMenu
+    position: fixed
+    left: 0
+    right: 0
+    bottom: 0
+    top: 0
+    background: black
+    z-index: 100
+    display: flex
+    flex-direction: column
+    align-content: center
+    align-items: center
+    justify-content: center
+    border: 3px solid #8de936
+
+.logoMobile
+    position: absolute
+    left: 20px
+    top: 20px
+
+.burgerClose
+    position: absolute
+    right: 20px
+    top: 24px
+    width: 24px
+    height: 24px
+    background: none
+    background-image: url('/close.svg')
+    border: none
+    background-size: contain
+
+
+.loginModalBg
+    z-index: 10
+    display: flex
+    flex-direction: column
+    align-items: center
+    justify-content: center
+    position: fixed
+    left: 0
+    right: 0
+    bottom: 0
+    top: 0
+    background: rgba(0, 0, 0, 0.60)
+    @media screen and (max-width: 660px)
+        padding: 0 10px
+
+.loginModalBlock
+    position: relative
+    border: 3px solid #5FC300
+    background: #010103
+    padding: 60px 110px 70px 115px
+    @media screen and (max-width: 660px)
+        padding: 20px 20px 50px 20px
+        button
+            @media screen and (max-width: 660px)
+                width: 100%
+
+.loginModalTitle
+    margin-bottom: 25px
+    @media screen and (max-width: 660px)
+        margin-bottom: 15px
+
+.loginRow
+    display: flex
+    justify-content: space-between
+    align-items: flex-end
+    @media screen and (max-width: 660px)
+        margin-top: 20px
+
+.theOnlyThingIknowForReal
+    cursor: pointer
+    text-decoration-line: underline
+    align-self: flex-start
+    transform: translateY(5px)
+    font-size: 20px
+    @media screen and (max-width: 660px)
+        font-size: 11px
+    &:hover
+        color: #5FC300
+
+.loginClose
+    width: 30px
+    height: 30px
+    background-position: center
+    background-repeat: no-repeat
+    background-image: url('/loginClose.svg')
+    position: absolute
+    top: 25px
+    right: 30px
+    cursor: pointer
+    &:hover
+        filter: invert(96%) sepia(67%) saturate(12%) hue-rotate(245deg) brightness(304%) contrast(100%)
+    @media screen and (max-width: 660px)
+        right: 5px
+        top: 5px
+
+.loginPic
+    position: absolute
+    top: -90px
+    left: -70px
+    width: 970px
+    height: 100px
+    background-repeat: no-repeat
+    background-image: url('/loginPic.png')
+    @media screen and (max-width: 660px)
+        height: 65px
+        background-size: contain
+        top: -60px
+
+.loginCube
+    position: absolute
+    width: 98px
+    height: 120px
+    background-image: url('/loginCube.png')
+    bottom: -60px
+    right: 60px
+    animation: cube1 6s infinite ease
+    @media screen and (max-width: 660px)
+        background-size: contain
+        width: 54px
+        background-repeat: no-repeat
+        bottom: -80px
+        right: 20px
+@keyframes cube1
+    0%
+        transform: translateY(0)
+    50%
+        transform: translateY(-30px)
+    100%
+        transform: translateY(0)

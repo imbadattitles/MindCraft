@@ -1,0 +1,245 @@
+.main
+    flex: 0 0 auto
+    padding: 20px 0px 110px 0px
+    background-image: url('/bg.png')
+    position: relative
+    z-index: 0
+    @media screen and (max-width: 560px)
+        padding: 40px 0px 70px 0px
+
+.footerBg2
+    width: 824px
+    height: 785px
+    position: absolute
+    left: 0
+    top: -650px
+    background-repeat: no-repeat
+    background-image: url(/footerBg2.png)
+    pointer-events: none
+    @media screen and (max-width: 560px)
+        display: none
+
+.footerCube1
+    width: 359px
+    height: 442px
+    position: absolute
+    right: 0
+    top: -180px
+    background-image: url(/footerCube1.png)
+    @media screen and (max-width: 560px)
+        display: none
+
+.footerCube2
+    width: 155px
+    height: 127px
+    position: absolute
+    right: 300px
+    top: -70px
+    background-image: url(/footerCube2.png)
+    @media screen and (max-width: 560px)
+        height: 70px
+        background-size: contain
+        width: 85px
+        left: 260px
+        top: -30px
+
+.columns
+    display: flex
+    justify-content: space-between
+    gap: 20px
+    flex-wrap: wrap
+
+.firstColumn
+    max-width: 244px
+    @media screen and (max-width: 560px)
+        max-width: 100%
+        display: flex
+        justify-content: space-between
+        gap: 20px
+
+.logo
+    margin-bottom: 90px
+    object-fit: contain
+    width: 121px
+    height: 78px
+    @media screen and (max-width: 560px)
+        margin-bottom: 0px
+        object-fit: contain
+        width: 64px
+        height: 41px
+
+.firstColumnText
+    margin-bottom: 65px
+    @media screen and (max-width: 560px)
+        margin-bottom: 0
+
+.secondColumn
+    width: 75%
+    display: flex 
+    flex-direction: column
+    align-items: flex-start
+    @media screen and (max-width: 560px)
+        display: block
+        width: 100%
+
+
+.links
+    display: flex
+    flex-wrap: wrap
+    margin-top: 10px
+    margin-bottom: 100px
+    gap: 15px
+    @media screen and (max-width: 560px)
+        gap: 13px
+        margin-bottom: 18px
+
+.linkIcon
+    width: 60px
+    height: 60px
+    background-repeat: no-repeat
+    border-radius: 50%
+    @media screen and (max-width: 560px)
+        background-size: contain
+        width: 47px
+        height: 47px
+
+.linkIcon1
+    background-image: url(/linkIcon1.svg)
+    &::after
+        content: ''
+        width: 100%
+        height: 100%
+        display: block
+        background-image: url(/linkIcon1h.svg)
+        opacity: 0
+        border-radius: 50%
+    &:hover
+        background: none
+        &::after
+            opacity: 1
+            
+
+.linkIcon2
+    background-image: url(/linkIcon2.svg)
+    &::after
+        content: ''
+        width: 100%
+        height: 100%
+        display: block
+        background-image: url(/linkIcon2h.svg)
+        opacity: 0
+        border-radius: 50%
+    &:hover
+        background: none
+        &::after
+            opacity: 1
+
+.linkIcon3
+    background-image: url(/linkIcon3.svg)
+    &::after
+        content: ''
+        width: 100%
+        height: 100%
+        display: block
+        background-image: url(/linkIcon3h.svg)
+        opacity: 0
+        border-radius: 50%
+    &:hover
+        background: none
+        &::after
+            opacity: 1
+
+.linkIcon4
+    background-image: url(/linkIcon4.svg)
+    &::after
+        content: ''
+        width: 100%
+        height: 100%
+        display: block
+        background-image: url(/linkIcon4h.svg)
+        opacity: 0
+        border-radius: 50%
+    &:hover
+        background: none
+        &::after
+            opacity: 1
+
+.linkIcon5
+    background-image: url(/linkIcon5.svg)
+    &::after
+        content: ''
+        width: 100%
+        height: 100%
+        display: block
+        background-image: url(/linkIcon5h.svg)
+        opacity: 0
+        border-radius: 50%
+    &:hover
+        background: none
+        &::after
+            opacity: 1
+
+.linkIcon6
+    background-image: url(/linkIcon6.svg)
+    &::after
+        content: ''
+        width: 100%
+        height: 100%
+        display: block
+        background-image: url(/linkIcon6h.svg)
+        opacity: 0
+        border-radius: 50%
+    &:hover
+        background: none
+        &::after
+            opacity: 1
+
+.linkIcon7
+    background-image: url(/linkIcon7.svg)
+    &::after
+        content: ''
+        width: 100%
+        height: 100%
+        display: block
+        background-image: url(/linkIcon7h.svg)
+        opacity: 0
+        border-radius: 50%
+    &:hover
+        background: none
+        &::after
+            opacity: 1
+
+.linkIcon8
+    background-image: url(/linkIcon8.svg)
+    &::after
+        content: ''
+        width: 100%
+        height: 100%
+        display: block
+        background-image: url(/linkIcon8h.svg)
+        opacity: 0
+        border-radius: 50%
+    &:hover
+        background: none
+        &::after
+            opacity: 1
+
+
+.nav
+    width: 100%
+    gap: 10px
+    display: flex
+    flex-wrap: wrap
+    justify-content: space-between
+    
+        
+
+.navLink
+    margin-bottom: 10px
+    &:hover
+        color: #3CFDFF
+
+.copyright
+    @media screen and (max-width: 560px)
+        position: absolute
+        bottom: -30px

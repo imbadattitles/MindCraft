@@ -1,0 +1,536 @@
+.main
+    padding-bottom: 100px
+    position: relative
+    z-index: 0
+    @media screen and (max-width: 1200px)
+        padding-bottom: 50px
+
+.mainBg
+    width: 100%
+    height: 680px
+    background-position: center
+    background-repeat: no-repeat
+    position: absolute
+    top: 0
+    left: 0
+    opacity: .5
+    @media screen and (max-width: 1200px)
+        height: 240px
+        @media screen and (max-width: 560px)
+            height: 57%
+.h1pos
+    max-width: 970px
+    padding-top: 240px
+    margin-bottom: 10PX
+    @media screen and (max-width: 1200px)
+        max-width: 100%
+        padding-top: 200px
+        margin-bottom: 30px
+    
+    
+.benefits
+    margin-top: 140px
+    display: flex
+    justify-content: space-between
+    gap: 70px
+    margin-bottom: 140px
+    @media screen and (max-width: 1200px)
+        margin-top: 20px
+        flex-wrap: wrap
+        gap: 50px
+        justify-content: center
+        @media screen and (max-width: 560px)
+            margin-bottom: 50px
+
+.benefitText
+    @media screen and (max-width: 1200px)
+        width: 100%
+        @media screen and (max-width: 560px)
+            width: 300px
+.benefit
+    @media screen and (max-width: 1200px)
+        width: 40%
+        @media screen and (max-width: 560px)
+            width: 100%
+.benefitPic
+    width: 180px
+    height: 108px
+    position: relative
+    @media screen and (max-width: 560px)
+    
+    
+.benefitPic1
+    display: block
+    position: absolute
+    left: -95px
+    top: -115px
+    width: 320px
+    height: 263px
+    background-size: contain
+    @media screen and (max-width: 560px)
+        background-size: contain
+        height: 250px
+        top: -90px
+
+.benefitPic2
+    display: block
+    position: absolute
+    left: -95px
+    top: -115px
+    width: 320px
+    height: 263px
+    background-size: contain
+    @media screen and (max-width: 560px)
+        background-size: contain
+        height: 250px
+        top: -90px
+
+.benefitPic3
+    display: block
+    position: absolute
+    left: -95px
+    top: -115px
+    width: 320px
+    height: 263px
+    background-size: contain
+    @media screen and (max-width: 560px)
+        background-size: contain
+        height: 250px
+        top: -90px
+
+.benefitPic4
+    display: block
+    position: absolute
+    left: -95px
+    top: -115px
+    width: 320px
+    height: 263px
+    background-size: contain
+    @media screen and (max-width: 560px)
+        background-size: contain
+        height: 250px
+        top: -90px
+
+.coursesSection
+    position: relative
+    z-index: 1
+
+.titleRow
+    display: flex
+    align-items: center
+    margin-bottom: 30px
+    gap: 30px
+    z-index: 5
+    @media screen and (max-width: 560px)
+        flex-direction: column
+        align-items: flex-start
+        gap: 5px
+        margin-bottom: 10px
+
+.coursesBlock
+  padding: 60px 0px
+  margin-bottom: 110px
+  button
+    font-weight: 600
+    letter-spacing: 1.1px
+  @media screen and (max-width: 1200px)
+    padding: 5px 0px
+    margin-bottom: 50px
+  .courseBlock:nth-child(1),.courseBlock:nth-child(4)
+    button:hover
+        background: silver
+  .courseBlock:nth-child(2),.courseBlock:nth-child(5)
+    button
+        background: black
+        color: white
+        &:hover
+            background: grey
+  .courseBlock:nth-child(3)
+    li, p
+        color: white
+    
+
+
+.courseBlock
+  max-width: 1330px
+  padding: 0px 0px 60px 0px
+  margin: auto
+  position: relative
+  margin-bottom: 66px
+  @media screen and (max-width: 1200px)
+    width: 100%
+    margin-bottom: 35px
+    padding: 0px 0px 20px 0px
+    
+.courseBlack
+    position: relative
+    background: black
+    top: 0
+    left: 0
+    width: 100%
+    height: 130px
+    z-index: 0
+    @media screen and (max-width: 560px)
+        height: 100px
+
+.courseTop
+    display: grid
+    grid-template-columns: 290px 830px
+    column-gap: 80px
+    background: black
+    padding: 0 15px 0px 60px
+    @media screen and (max-width: 1200px)
+        display: flex
+        padding-left: 15px
+    h3
+        position: relative
+        z-index: 2
+        margin-top: 33px
+        margin-bottom: 33px
+        @media screen and (max-width: 1200px)
+            max-width: 50vw
+            margin-top: 20px
+            margin-bottom: 20px
+            @media screen and (max-width: 560px)
+                max-width: 50vw
+                margin-top: 20px
+    .courseImg
+        position: relative
+        z-index: 2
+        width: 300px
+        height: 300px
+        object-fit: contain
+        transform: translate(15px, -30px)
+        @media screen and (max-width: 1200px)
+            width: 250px
+            height: 250px
+            object-fit: contain
+            transform: translate(0)
+            @media screen and (max-width: 560px)
+                width: 150px
+                height: 150px
+                object-fit: contain
+                transform: translate(0)
+.picContainer
+    width: 0px
+    height: 0px    
+    @media screen and (max-width: 1200px)
+        position: absolute
+        right: 230px
+        top: -70px
+        z-index: 3
+        @media screen and (max-width: 560px)
+            right: 130px
+            top: -20px
+
+.courseBottom
+    margin-top: 80px
+    display: grid
+    grid-template-columns: 290px 830px
+    // grid-template-rows: 1fr 1fr
+    column-gap: 80px
+    padding: 0 15px 0px 60px
+    row-gap: 90px
+    @media screen and (max-width: 1200px)
+        display: flex
+        flex-direction: column
+        align-items: flex-start
+        margin-top: 60px
+        row-gap: 20px
+        padding-left: 15px
+        @media screen and (max-width: 560px)
+            margin-top: 40px
+            row-gap: 20px
+    ul, ol
+        list-style: none
+        margin-top: 20px
+        @media screen and (max-width: 1200px)
+            margin-top: 13px
+    li
+        display: flex
+        align-items: flex-start
+    .courseTextItem
+        font-family: Circe
+        font-style: normal
+        font-weight: 400
+        font-size: 18pt
+        margin-bottom: 20px
+        @media screen and (max-width: 1200px)
+            font-size: 15pt
+        &:last-child
+            margin: 0
+    .courseTextItem2
+        font-family: Circe
+        font-style: normal
+        font-weight: 400
+        font-size: 18pt
+        margin-bottom: 5px
+        @media screen and (max-width: 1200px)
+            font-size: 15pt
+
+
+.courseTextBlock
+    grid-row: span 2
+    display: grid
+    grid-template-columns: 430px 360px
+    gap: 50px
+    @media screen and (max-width: 1200px)
+        display: flex
+        flex-wrap: wrap
+        flex-direction: column
+        gap: 20px
+
+.courseBlack
+    position: absolute
+.courseInfo
+    position: relative
+    color: black
+    z-index: 2
+    transform: translateY(70px)
+    margin-bottom: 40px
+    @media screen and (max-width: 1200px)
+        display: flex
+        flex-wrap: wrap
+        flex-direction: column
+        transform: translate(0)
+        align-items: flex-start
+        margin-right: auto
+    .courseInfoAge
+        display: flex
+        flex-wrap: wrap
+        gap: 10px
+        margin-bottom: 10px
+        p 
+            display: flex
+            flex-wrap: wrap
+            gap: 5px
+        @media screen and (max-width: 1200px)
+            font-size: 16px
+        .courseInfoAgeIcon
+            min-width: 33px
+            height: 33px
+            background-size: contain
+            background-repeat: no-repeat
+            background-image: url('/courses/ageIcon.png')
+            margin-right: 5px
+            @media screen and (max-width: 1200px)
+                height: 19px
+                width: 19px
+    .courseInfoCost
+        margin-top: 20px
+        font-family: Unbounded
+        font-size: 28px
+        font-style: normal
+        font-weight: 500
+        line-height: 130%
+        display: flex
+        align-items: center
+        margin-bottom: 40px
+        @media screen and (max-width: 1200px)
+            margin-bottom: 0px
+            font-size: 20px
+        .courseInfoCostIcon
+            min-width: 26px
+            height: 29px
+            background-size: contain
+            background-repeat: no-repeat
+            background-image: url('/courses/valuteIcon.png')
+            margin-right: 10px
+            @media screen and (max-width: 1200px)
+                width: 16px
+                height: 17px
+
+.changeChapter 
+    font-family: Unbounded
+    font-size: 10px
+    font-style: normal
+    font-weight: 500
+    border-radius: 100px
+    padding: 7px
+    text-transform: uppercase
+    cursor: pointer
+    letter-spacing: 1.3px
+.courseInfoBtns
+    align-self: flex-end
+    display: flex
+    flex-direction: column
+    gap: 10px
+    position: relative
+    z-index: 3
+    margin-right: auto
+    width: 100%
+    button
+        width: 286px
+        height: 51px
+        border-radius: 100px
+        border: none
+        @media screen and (max-width: 560px)
+            width: 100%
+.howLearn
+    margin-bottom: 130px
+    position: relative
+    @media screen and (max-width: 560px)
+        margin-bottom: 60px
+
+.howLearnTitle
+    margin-bottom: 20px
+
+.howLearnVideo
+    width: 100%
+    height: 700px
+    background-image: url(/mainPage/howLearnVideo.png)
+    @media screen and (max-width: 560px)
+        height: 200px
+
+.howLearnCube1
+    position: absolute
+    width: 90px
+    height: 86px
+    background-image: url(/courses/howLearnCube.png)
+    background-repeat: no-repeat
+    right: 30px
+    top: -20px
+    @media screen and (max-width: 560px)
+        display: none
+    
+
+.FAQ
+    position: relative
+    margin-bottom: 190px
+    @media screen and (max-width: 560px)
+        margin-bottom: 80px
+
+.FAQTitle
+    margin-bottom: 30px
+    @media screen and (max-width: 560px)
+        margin-bottom: 20px
+
+.questionPic
+    width: 518px
+    height: 548px
+    background-image: url('/courses/questionPic-blue.png')
+    position: absolute
+    right: 0
+    top: -270px
+    @media screen and (max-width: 560px)
+        display: none
+.FAQ_block
+    background: black
+    position: relative
+    cursor: pointer
+    padding: 38px
+    margin-bottom: 25px
+    @media screen and (max-width: 560px)
+        padding: 20px
+        margin-bottom: 15px
+
+.FAQ_row
+    display: flex 
+    justify-content: space-between
+    align-items: center
+
+
+.FAQ_blockTitle
+    max-width: 930px
+    @media screen and (max-width: 1200px)
+        font-size: 14px
+        max-width: 100%
+        margin-right: 60px
+        @media screen and (max-width: 560px)
+            max-width: 210px
+
+.FAQ_blockText
+    margin-top: 50px
+    max-width: 930px
+    @media screen and (max-width: 560px)
+        max-width: 100%
+        margin-top: 30px
+        font-size: 12px
+
+.FAQpic
+    width: 65px
+    height: 65px
+    position: absolute
+    background-repeat: no-repeat
+    bottom: 0
+    right: 0
+    @media screen and (max-width: 560px)
+        background-size: contain
+        height: 50px
+        width: 50px
+
+.anotherCourses
+    margin-bottom: 190px
+    margin-top: 190px
+    position: relative
+    z-index: 10
+
+.anotherCoursesRow
+    margin-top: 30px
+    padding: 0px 0px 0px 0px
+    
+
+.anotherCourseCircle
+    position: relative
+    background: #0703C3
+    width: 270px
+    height: 270px
+    border-radius: 50%
+    margin-bottom: 30px
+    @media screen and (max-width: 560px)
+        margin: auto
+.anotherCourse
+    transform: translateX(70px)
+    @media screen and (max-width: 560px)
+        display: flex
+        flex-direction: column
+        gap: 20px
+        transform: translate(0)
+        text-align: center !important
+
+.anotherCourseImg
+    width: 100%
+    height: 100%
+    object-fit: contain
+    position: absolute
+    left: 50%
+    top: 50%
+    transform: translate(-50%,-50%)
+
+.none
+    display: none
+
+.changeCostBtn
+    min-width: 300px
+    cursor: pointer
+    display: flex
+    align-items: center
+    overflow: hidden
+    border-radius: 100px
+    margin-bottom: 10px
+    align-items: flex-start
+    // padding: 10px 0px
+    letter-spacing: 1.3px
+.changeCostBtnItem
+    flex: 1
+    text-align: center
+    display: inline
+    // width: 100px
+    font-family: Unbounded
+    font-size: 10px
+    font-style: normal
+    font-weight: 500
+    line-height: normal
+    letter-spacing: 1.3px
+    text-transform: uppercase
+    // padding: 16px 
+    padding: 14px 0px
+    
+.changeCostBtnItemActive
+    font-family: Unbounded
+    font-size: 10px
+    font-style: normal
+    font-weight: 500
+    line-height: normal
+    letter-spacing: 1.3px
+    text-transform: uppercase
